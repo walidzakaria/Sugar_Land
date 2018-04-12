@@ -1,0 +1,6 @@
+﻿1 USD Dollar
+2 EUR Euro
+3 EGP Egyptian Pound
+4 GBP British Pound
+4 RUB Russian Ruble
+5 UAH Ukrainian Hryvnia

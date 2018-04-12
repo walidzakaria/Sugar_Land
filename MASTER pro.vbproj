@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2E52826-2F01-4480-B239-DF463B3588F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MASTER_pro.My.MyApplication</StartupObject>
+    <RootNamespace>MASTER_pro</RootNamespace>
+    <AssemblyName>MASTER pro</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>14.1.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MASTER pro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MASTER pro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TrinitY.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.3.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking, Version=4.1.1.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.1.1.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.1.1.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.1.1.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KryptonToolboxPackage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.1\Bin\KryptonToolboxPackage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CashDrawer.vb" />
+    <Compile Include="DBDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CashierNew.Designer.vb">
+      <DependentUpon>CashierNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CashierNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class1.vb" />
+    <Compile Include="ExClass.vb" />
+    <Compile Include="Forms\frmAddDiscount.Designer.vb">
+      <DependentUpon>frmAddDiscount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDiscount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAgents.Designer.vb">
+      <DependentUpon>frmAgents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAgents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCheckItemCost.Designer.vb">
+      <DependentUpon>frmCheckItemCost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCheckItemCost.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCurrency.Designer.vb">
+      <DependentUpon>frmCurrency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCurrency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFind.Designer.vb">
+      <DependentUpon>frmFind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPassKey.Designer.vb">
+      <DependentUpon>frmPassKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPassKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReception.Designer.vb">
+      <DependentUpon>frmReception.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReception.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmValidate.Designer.vb">
+      <DependentUpon>frmValidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmValidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitForm1.Designer.vb">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTracker.Designer.vb">
+      <DependentUpon>frmTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraLogs.Designer.vb">
+      <DependentUpon>XtraLogs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraLogs.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraNewBarcode.Designer.vb">
+      <DependentUpon>XtraNewBarcode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraNewBarcode.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GV.vb" />
+    <Compile Include="ReportsDS.vb">
+      <DependentUpon>ReportsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBarcode.Designer.vb">
+      <DependentUpon>frmBarcode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBarcode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCash.Designer.vb">
+      <DependentUpon>frmCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDebit.Designer.vb">
+      <DependentUpon>frmDebit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDebit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImport.Designer.vb">
+      <DependentUpon>frmImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManageUsers.Designer.vb">
+      <DependentUpon>frmManageUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManageUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPassword.Designer.vb">
+      <DependentUpon>frmPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPriceChange.Designer.vb">
+      <DependentUpon>frmPriceChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPriceChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRate.Designer.vb">
+      <DependentUpon>frmRate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRates.Designer.vb">
+      <DependentUpon>frmRates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettings.Designer.vb">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignup.Designer.vb">
+      <DependentUpon>frmSignup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSupport.Designer.vb">
+      <DependentUpon>frmSupport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSupport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSync.Designer.vb">
+      <DependentUpon>frmSync.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSync.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVerify.Designer.vb">
+      <DependentUpon>frmVerify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVerify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Numbers.vb" />
+    <Compile Include="NumbersInLetters.vb" />
+    <Compile Include="ReportsDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sync.vb" />
+    <Compile Include="Forms\TestForm.Designer.vb">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraDailyMonitor.Designer.vb">
+      <DependentUpon>XtraDailyMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraDailyMonitor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraAgents.Designer.vb">
+      <DependentUpon>XtraAgents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraAgents.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraAgentsBarcodes.Designer.vb">
+      <DependentUpon>XtraAgentsBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraAgentsBarcodes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraBarcodes.Designer.vb">
+      <DependentUpon>XtraBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraBarcodes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraDaily.Designer.vb">
+      <DependentUpon>XtraDaily.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraDaily.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraIn.Designer.vb">
+      <DependentUpon>XtraIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraIn.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraItemMonitor.Designer.vb">
+      <DependentUpon>XtraItemMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraItemMonitor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraItems.Designer.vb">
+      <DependentUpon>XtraItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraItems.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraMonitor.Designer.vb">
+      <DependentUpon>XtraMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraMonitor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraOut.Designer.vb">
+      <DependentUpon>XtraOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraOut.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraPassKey.Designer.vb">
+      <DependentUpon>XtraPassKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraPassKey.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraPaxNo.Designer.vb">
+      <DependentUpon>XtraPaxNo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraPaxNo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraPoster.designer.vb">
+      <DependentUpon>XtraPoster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraPoster.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReceipt.Designer.vb">
+      <DependentUpon>XtraReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReceipt.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReport1.Designer.vb">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReport1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraLabels.designer.vb">
+      <DependentUpon>XtraLabels.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraLabels.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\CashierNew.resx">
+      <DependentUpon>CashierNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDiscount.resx">
+      <DependentUpon>frmAddDiscount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAgents.resx">
+      <DependentUpon>frmAgents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCheckItemCost.resx">
+      <DependentUpon>frmCheckItemCost.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCurrency.resx">
+      <DependentUpon>frmCurrency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFind.resx">
+      <DependentUpon>frmFind.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPassKey.resx">
+      <DependentUpon>frmPassKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReception.resx">
+      <DependentUpon>frmReception.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmValidate.resx">
+      <DependentUpon>frmValidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitForm1.resx">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBarcode.resx">
+      <DependentUpon>frmBarcode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCash.resx">
+      <DependentUpon>frmCash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDebit.resx">
+      <DependentUpon>frmDebit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImport.resx">
+      <DependentUpon>frmImport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManageUsers.resx">
+      <DependentUpon>frmManageUsers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPassword.resx">
+      <DependentUpon>frmPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPriceChange.resx">
+      <DependentUpon>frmPriceChange.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRate.resx">
+      <DependentUpon>frmRate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRates.resx">
+      <DependentUpon>frmRates.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignup.resx">
+      <DependentUpon>frmSignup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSupport.resx">
+      <DependentUpon>frmSupport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSync.resx">
+      <DependentUpon>frmSync.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVerify.resx">
+      <DependentUpon>frmVerify.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTracker.resx">
+      <DependentUpon>frmTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraLogs.resx">
+      <DependentUpon>XtraLogs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraDaily.resx">
+      <DependentUpon>XtraDaily.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraNewBarcode.resx">
+      <DependentUpon>XtraNewBarcode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraAgents.resx">
+      <DependentUpon>XtraAgents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraAgentsBarcodes.resx">
+      <DependentUpon>XtraAgentsBarcodes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraBarcodes.resx">
+      <DependentUpon>XtraBarcodes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraDailyMonitor.resx">
+      <DependentUpon>XtraDailyMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraIn.resx">
+      <DependentUpon>XtraIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraItemMonitor.resx">
+      <DependentUpon>XtraItemMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraItems.resx">
+      <DependentUpon>XtraItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraLabels.resx">
+      <DependentUpon>XtraLabels.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraOut.resx">
+      <DependentUpon>XtraOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraPassKey.resx">
+      <DependentUpon>XtraPassKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraPaxNo.resx">
+      <DependentUpon>XtraPaxNo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraPoster.resx">
+      <DependentUpon>XtraPoster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReceipt.resx">
+      <DependentUpon>XtraReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReport1.resx">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DBDataSet1.xsc">
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBDataSet1.xss">
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Empty_Master Pro.rar" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReportsDS.xsc">
+      <DependentUpon>ReportsDS.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportsDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ReportsDS.xss">
+      <DependentUpon>ReportsDS.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\StorageMasterWebLogo2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1000px-Linkedin_Shiny_Icon.svg.png" />
+    <None Include="Resources\icon175x175.png" />
+    <None Include="Resources\22812_thumb_icon_large_intuser.png" />
+    <None Include="Resources\preferences-system-session.png" />
+    <None Include="Resources\EnablementPrograms_icon_%281%29.png" />
+    <None Include="Resources\people-icon.png" />
+    <None Include="Resources\out-icon.png" />
+    <None Include="Resources\003401-glossy-silver-icon-media-a-media21-arrow-back.png" />
+    <None Include="Resources\consumer-package-goods.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\print_printer.png" />
+    <None Include="Resources\invoice-icon-300x300.png" />
+    <None Include="Resources\Activity_Monitor.png" />
+    <None Include="Resources\calendar-icon.png" />
+    <None Include="Resources\ee0e3847-ba87-4aaf-8570-39fff3d2d6da.png" />
+    <None Include="Resources\ee0e3847-ba87-4aaf-8570-39fff3d2d6da1.png" />
+    <None Include="Resources\219936304.png" />
+    <None Include="Resources\ReturnsIconRed.png" />
+    <None Include="Resources\logo_icon.png" />
+    <None Include="Resources\1280px-Barcode_EAN8.svg.png" />
+    <None Include="Resources\TT16s.jpg" />
+    <None Include="Resources\calculator_400.png" />
+    <None Include="Resources\Timer.png" />
+    <Content Include="DB_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\student-loan-debt-installment-payment-check-money-paid-back-paying-owed-obligation-borrowed-funding-college-45808135.jpg" />
+    <None Include="Resources\Empty-Profile-e1410842188959.jpg" />
+    <Content Include="notes.txt" />
+    <None Include="Resources\stock-photos-teacher-illustration-44117201.jpg" />
+    <None Include="Resources\unnamed.png" />
+    <None Include="Resources\Sign up1.png" />
+    <None Include="Resources\PassKey.png" />
+    <Content Include="TrinitY.ico" />
+    <None Include="Resources\Support.jpg" />
+    <None Include="Resources\support-icons.png" />
+    <None Include="Resources\servers.png" />
+    <None Include="Resources\database-backup-cd-512_author_rafi_royalty_free_for_personal_use_lo_sauer_lsauer_technical_programming_com.png" />
+    <None Include="Resources\Multiple-user.png" />
+    <None Include="Resources\switch_course_grey.png" />
+    <None Include="Resources\add-female-user-icon.png" />
+    <None Include="Resources\Sign up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSScriptControl">
+      <Guid>{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

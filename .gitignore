@@ -1,0 +1,6 @@
+bin
+My Project
+obj
+Service References
+*.mdf
+*.ldf
