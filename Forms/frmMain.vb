@@ -15,6 +15,32 @@ Public Class frmMain
     Dim ValidQnty As Boolean = False
 
     'to convert numbers to letters
+
+    Public Sub FillCategories()
+        'fill the items search
+        Dim FillQuery As String = "SELECT ID, Category FROM tblCategory ORDER BY Category;"
+
+        Using cmd = New SqlCommand(FillQuery, myConn)
+            If myConn.State = ConnectionState.Closed Then
+                myConn.Open()
+            End If
+            Dim adt As New SqlDataAdapter
+            Dim ds As New DataSet()
+            adt.SelectCommand = cmd
+            adt.Fill(ds)
+            adt.Dispose()
+
+            iiCategory.DataSource = ds.Tables(0)
+            iiCategory.DisplayMember = "Category"
+            iiCategory.ValueMember = "ID"
+            iiCategory.SelectedIndex = -1
+
+            myConn.Close()
+
+        End Using
+
+    End Sub
+
     Public Function AmountInWords(ByVal nAmount As String, Optional ByVal wAmount _
                    As String = vbNullString, Optional ByVal nSet As Object = Nothing) As String
         'Let's make sure entered value is numeric
@@ -1023,6 +1049,7 @@ Public Class frmMain
 
         ElseIf KryptonDockableNavigator1.SelectedIndex = 3 Then
             KryptonRibbonGroupButton4.Checked = True
+            FillCategories()
 
             'fill the items search
             Dim FillQuery As String = "SELECT PrKey, Serial, Name FROM tblItems" _
@@ -3063,7 +3090,7 @@ restart2:
     End Sub
 
     Private Sub iiAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles iiAdd.Click
-        If iiAdd.Text = "ÍÝÙ" Then
+        If iiAdd.Text = "SAVE" Then
             If iiSerial.Text = "" Then
                 MessageBox.Show("You must enter code!", "Empty Code", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 iiSerial.Focus()
@@ -3159,10 +3186,15 @@ restart2:
 
 
                 ' Add new Item to tblItems
-                Dim Query As String = "INSERT INTO tblItems (Serial, Name, Price, [Minimum], PackageSerial, PackagePrice, PackageUnits, EnglishName)" _
+                Dim category As String = iiCategory.SelectedValue
+                If category = Nothing Then
+                    category = "NULL"
+                End If
+
+                Dim Query As String = "INSERT INTO tblItems (Serial, Name, Price, [Minimum], PackageSerial, PackagePrice, PackageUnits, EnglishName, Category)" _
                                       & " VALUES ('" & iiSerial.Text.ToUpper & "', N'" & iiItem.Text.ToUpper & "', '" _
                                       & Val(iiPrice.Text) & "', '" & Val(iiMinimumQnty.Text) & "', N'" & iiSerial2.Text & "', '" & iiGroupPrice.Text _
-                                      & "', '" & iiUnitNumber.Text & "', N'" & iiEnglishName.Text & "')"
+                                      & "', '" & iiUnitNumber.Text & "', N'" & iiEnglishName.Text & "', " & category & ")"
 
                 Using cmd = New SqlCommand(Query, myConn)
                     If myConn.State = ConnectionState.Closed Then
@@ -3185,6 +3217,8 @@ restart2:
                 iiGroupPrice.Text = Nothing
                 iiUnitNumber.Text = Nothing
                 iiAlterCodes.Text = Nothing
+                iiMinimumQnty.Text = Nothing
+                iiCategory.SelectedIndex = -1
                 iiEnglishName.Text = ""
                 iiSerial.Focus()
                 'refill the items search
@@ -3330,10 +3364,16 @@ restart2:
 
 
                 ' Add new Item to tblItems
+                Dim category As String = iiCategory.SelectedValue
+                If category = Nothing Then
+                    category = "NULL"
+                End If
+
                 Dim Query As String = "UPDATE tblItems SET Serial = '" & iiSerial.Text & "', Name = N'" & iiItem.Text _
                                       & "', Price = " & iiPrice.Text & ", [Minimum] = " & Val(iiMinimumQnty.Text) _
                                       & ", PackageSerial= N'" & iiSerial2.Text & "', PackagePrice = " & Val(iiGroupPrice.Text) _
                                       & ", PackageUnits = " & Val(iiUnitNumber.Text) & ", EnglishName = N'" & iiEnglishName.Text & "'" _
+                                      & " , Category = " & category _
                                       & " WHERE PrKey IN (" _
                                       & " SELECT tblItems.PrKey FROM tblItems LEFT OUTER JOIN tblMultiCodes ON tblItems.PrKey = tblMultiCodes.Item" _
                                       & " WHERE tblItems.Serial = '" & iiSearch.Text & "' OR tblMultiCodes.Code = '" & iiSearch.Text & "');"
@@ -3359,6 +3399,7 @@ restart2:
                 iiUnitNumber.Text = Nothing
                 iiAlterCodes.Text = Nothing
                 iiEnglishName.Text = Nothing
+                iiCategory.SelectedIndex = -1
                 iiSearch.Focus()
                 iiSearch.SelectAll()
 
@@ -3466,6 +3507,7 @@ restart2:
         iiUnitNumber.Text = Nothing
         iiAlterCodes.Text = Nothing
         iiEnglishName.Text = Nothing
+        iiCategory.SelectedIndex = -1
         Call Notification("Record Cleared!")
 
     End Sub
@@ -3489,6 +3531,11 @@ restart2:
                     iiSerial.Text = dt.Rows(0)(1).ToString
                     iiItem.Text = dt.Rows(0)(2).ToString
                     iiPrice.Text = dt.Rows(0)(3).ToString
+                    If Not IsDBNull(dt.Rows(0)(4)) Then
+                        iiCategory.SelectedValue = dt.Rows(0)(4)
+                    Else
+                        iiCategory.SelectedIndex = -1
+                    End If
                     iiMinimumQnty.Text = dt.Rows(0)(5).ToString
                     iiSerial2.Text = dt.Rows(0)(6).ToString
                     iiGroupPrice.Text = dt.Rows(0)(7).ToString
@@ -3516,6 +3563,8 @@ restart2:
             iiUnitNumber.Text = Nothing
             iiAlterCodes.Text = Nothing
             iiEnglishName.Text = Nothing
+            iiMinimumQnty.Text = Nothing
+            iiCategory.SelectedIndex = -1
         End If
     End Sub
 
@@ -4818,5 +4867,9 @@ retry:
 
         Report.ShowPreview()
 
+    End Sub
+
+    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+        frmCategory.ShowDialog()
     End Sub
 End Class

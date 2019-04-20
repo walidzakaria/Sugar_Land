@@ -1,0 +1,13 @@
+create table tblCategory (
+ID int primary key identity(1,1),
+Category nvarchar(100) not null
+)
+
+
+alter table tblitems alter column Category int;
+alter table tblitems add constraint FK_Category foreign key (Category) references tblCategory(ID);
+
+
+
+
+
