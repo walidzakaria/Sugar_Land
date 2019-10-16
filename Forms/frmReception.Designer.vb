@@ -32,10 +32,13 @@ Partial Class frmReception
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtDriver = New DevExpress.XtraEditors.TextEdit()
         Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.dtDate = New System.Windows.Forms.DateTimePicker()
         Me.btnRemove = New DevExpress.XtraEditors.SimpleButton()
@@ -51,9 +54,6 @@ Partial Class frmReception
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.txtCode = New DevExpress.XtraEditors.TextEdit()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtDriver = New DevExpress.XtraEditors.TextEdit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,11 +62,11 @@ Partial Class frmReception
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.txtDriver.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtINF.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCHD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtADT.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtDriver.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridControl1
@@ -138,7 +138,9 @@ Partial Class frmReception
         Me.GridView2.Appearance.ViewCaption.Options.UseFont = True
         Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9})
         Me.GridView2.GridControl = Me.GridControl1
+        Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ADT", Me.GridColumn5, "{0:0.##}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CHD", Me.GridColumn6, "{0:0.##}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "INF", Me.GridColumn7, "{0:0.##}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Driver", Me.GridColumn9, "{0:0.##}")})
         Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsView.ShowFooter = True
         '
         'GridColumn1
         '
@@ -189,6 +191,7 @@ Partial Class frmReception
         Me.GridColumn5.FieldName = "ADT"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.OptionsColumn.AllowEdit = False
+        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ADT", "{0:0.##}")})
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 3
         '
@@ -198,6 +201,7 @@ Partial Class frmReception
         Me.GridColumn6.FieldName = "CHD"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.OptionsColumn.AllowEdit = False
+        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CHD", "{0:0.##}")})
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 4
         '
@@ -207,6 +211,7 @@ Partial Class frmReception
         Me.GridColumn7.FieldName = "INF"
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.OptionsColumn.AllowEdit = False
+        Me.GridColumn7.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "INF", "{0:0.##}")})
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 5
         '
@@ -218,6 +223,16 @@ Partial Class frmReception
         Me.GridColumn8.OptionsColumn.AllowEdit = False
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 6
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Driver"
+        Me.GridColumn9.FieldName = "Driver"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.AllowEdit = False
+        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Driver", "{0:0.##}")})
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 7
         '
         'RepositoryItemCheckEdit1
         '
@@ -265,13 +280,36 @@ Partial Class frmReception
         Me.GroupControl2.Size = New System.Drawing.Size(1013, 160)
         Me.GroupControl2.TabIndex = 10
         '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl3.Appearance.Options.UseFont = True
+        Me.LabelControl3.Location = New System.Drawing.Point(393, 116)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(49, 19)
+        Me.LabelControl3.TabIndex = 37
+        Me.LabelControl3.Text = "Driver:"
+        '
+        'txtDriver
+        '
+        Me.txtDriver.EditValue = ""
+        Me.txtDriver.EnterMoveNextControl = True
+        Me.txtDriver.Location = New System.Drawing.Point(481, 113)
+        Me.txtDriver.Name = "txtDriver"
+        Me.txtDriver.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.txtDriver.Properties.Appearance.Options.UseFont = True
+        Me.txtDriver.Properties.Mask.EditMask = "\d+"
+        Me.txtDriver.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx
+        Me.txtDriver.Size = New System.Drawing.Size(161, 26)
+        Me.txtDriver.TabIndex = 4
+        '
         'btnPrint
         '
         Me.btnPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPrint.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.Appearance.Options.UseFont = True
-        Me.btnPrint.Image = CType(resources.GetObject("btnPrint.Image"), System.Drawing.Image)
-        Me.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnPrint.ImageOptions.Image = CType(resources.GetObject("btnPrint.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
         Me.btnPrint.Location = New System.Drawing.Point(32, 116)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(63, 39)
@@ -291,8 +329,8 @@ Partial Class frmReception
         Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnRemove.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRemove.Appearance.Options.UseFont = True
-        Me.btnRemove.Image = CType(resources.GetObject("btnRemove.Image"), System.Drawing.Image)
-        Me.btnRemove.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnRemove.ImageOptions.Image = CType(resources.GetObject("btnRemove.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnRemove.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
         Me.btnRemove.Location = New System.Drawing.Point(821, 61)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(152, 39)
@@ -303,8 +341,8 @@ Partial Class frmReception
         Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.Appearance.Options.UseFont = True
-        Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
-        Me.btnAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnAdd.ImageOptions.Image = CType(resources.GetObject("btnAdd.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
         Me.btnAdd.Location = New System.Drawing.Point(821, 16)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(152, 39)
@@ -313,6 +351,7 @@ Partial Class frmReception
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl7.Appearance.Options.UseFont = True
         Me.LabelControl7.Location = New System.Drawing.Point(393, 77)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(31, 19)
@@ -334,6 +373,7 @@ Partial Class frmReception
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl6.Appearance.Options.UseFont = True
         Me.LabelControl6.Location = New System.Drawing.Point(393, 45)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(38, 19)
@@ -355,6 +395,7 @@ Partial Class frmReception
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl5.Appearance.Options.UseFont = True
         Me.LabelControl5.Location = New System.Drawing.Point(393, 14)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(38, 19)
@@ -376,6 +417,7 @@ Partial Class frmReception
         'lblCompany
         '
         Me.lblCompany.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.lblCompany.Appearance.Options.UseFont = True
         Me.lblCompany.Location = New System.Drawing.Point(120, 79)
         Me.lblCompany.Name = "lblCompany"
         Me.lblCompany.Size = New System.Drawing.Size(42, 19)
@@ -385,6 +427,7 @@ Partial Class frmReception
         'lblName
         '
         Me.lblName.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.lblName.Appearance.Options.UseFont = True
         Me.lblName.Location = New System.Drawing.Point(120, 47)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(42, 19)
@@ -394,6 +437,7 @@ Partial Class frmReception
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl2.Appearance.Options.UseFont = True
         Me.LabelControl2.Location = New System.Drawing.Point(32, 14)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(42, 19)
@@ -404,6 +448,7 @@ Partial Class frmReception
         '
         Me.LabelControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Location = New System.Drawing.Point(777, 132)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(38, 19)
@@ -418,37 +463,6 @@ Partial Class frmReception
         Me.txtCode.Properties.Appearance.Options.UseFont = True
         Me.txtCode.Size = New System.Drawing.Size(198, 26)
         Me.txtCode.TabIndex = 0
-        '
-        'GridColumn9
-        '
-        Me.GridColumn9.Caption = "Driver"
-        Me.GridColumn9.FieldName = "Driver"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.OptionsColumn.AllowEdit = False
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 7
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.LabelControl3.Location = New System.Drawing.Point(393, 116)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(49, 19)
-        Me.LabelControl3.TabIndex = 37
-        Me.LabelControl3.Text = "Driver:"
-        '
-        'txtDriver
-        '
-        Me.txtDriver.EditValue = ""
-        Me.txtDriver.EnterMoveNextControl = True
-        Me.txtDriver.Location = New System.Drawing.Point(481, 113)
-        Me.txtDriver.Name = "txtDriver"
-        Me.txtDriver.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.txtDriver.Properties.Appearance.Options.UseFont = True
-        Me.txtDriver.Properties.Mask.EditMask = "\d+"
-        Me.txtDriver.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx
-        Me.txtDriver.Size = New System.Drawing.Size(161, 26)
-        Me.txtDriver.TabIndex = 4
         '
         'frmReception
         '
@@ -471,11 +485,11 @@ Partial Class frmReception
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.txtDriver.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtINF.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCHD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtADT.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtDriver.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -53,11 +53,11 @@ Public Class frmReception
 
         If GlobalVariables.authority = "Admin" Or GlobalVariables.authority = "Developer" Then
             dtDate.Visible = True
-            btnRemove.Visible = True
+            'btnRemove.Visible = True
             LabelControl1.Visible = True
         Else
             dtDate.Visible = True
-            btnRemove.Visible = True
+            'btnRemove.Visible = True
             LabelControl1.Visible = True
         End If
         fillData(Today)

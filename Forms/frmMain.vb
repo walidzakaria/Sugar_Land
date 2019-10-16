@@ -241,6 +241,7 @@ Public Class frmMain
                 KryptonRibbonGroupButton6.Visible = True
                 krpBarcode.Visible = True
                 btnPassKey.Visible = True
+                frmReception.btnRemove.Visible = True
             Case "Receptionist"
                 KryptonPage1.Visible = False
                 KryptonPage3.Visible = False
@@ -277,7 +278,7 @@ Public Class frmMain
                 btnPassKey.Visible = False
                 '    totalMonitor.Visible = False
                 'dailyMonitor.Visible = False
-
+                frmReception.btnRemove.Visible = False
             Case "Cashier"
                 '   KryptonPage2.Visible = False
                 KryptonPage3.Visible = False
@@ -307,6 +308,7 @@ Public Class frmMain
                 '    totalMonitor.Visible = False
                 'dailyMonitor.Visible = False
                 btnPassKey.Visible = False
+                frmReception.btnRemove.Visible = False
         End Select
     End Sub
 
@@ -1141,6 +1143,15 @@ Public Class frmMain
                 myConn.Close()
             End Using
 
+            osTimeFrom.Value = Today & " 00:00"
+            osTimeTill.Value = Today & " 23:59"
+
+            ossTimeFrom.Value = Today & " 00:00"
+            ossTimeTill.Value = Today & " 23:59"
+
+            deTimeFrom.Value = Today & " 00:00"
+            deTimeTill.Value = Today & " 23:59"
+
             'load item names
             Using cmd = New SqlCommand("SELECT Name FROM tblItems ORDER BY Name", myConn)
                 If myConn.State = ConnectionState.Closed Then
@@ -1155,6 +1166,26 @@ Public Class frmMain
                 osItem.DataSource = ds.Tables(0)
                 osItem.DisplayMember = "Name"
                 osItem.Text = Nothing
+
+                myConn.Close()
+
+            End Using
+
+
+            'load item codes
+            Using cmd = New SqlCommand("SELECT Serial FROM tblItems ORDER BY Serial", myConn)
+                If myConn.State = ConnectionState.Closed Then
+                    myConn.Open()
+                End If
+                Dim adt As New SqlDataAdapter
+                Dim ds As New DataSet()
+                adt.SelectCommand = cmd
+                adt.Fill(ds)
+                adt.Dispose()
+
+                osCode.DataSource = ds.Tables(0)
+                osCode.DisplayMember = "Serial"
+                osCode.Text = Nothing
 
                 myConn.Close()
 
@@ -1238,8 +1269,6 @@ Public Class frmMain
             End Using
             tmFrom.Value = Today & " 00:00"
             tmTill.Value = Today & " 23:59"
-
-
 
         End If
     End Sub
@@ -3541,6 +3570,7 @@ restart2:
                     iiGroupPrice.Text = dt.Rows(0)(7).ToString
                     iiUnitNumber.Text = dt.Rows(0)(8).ToString
                     iiEnglishName.Text = dt.Rows(0)(9).ToString
+
                 Catch ex As Exception
 
                 End Try
@@ -3712,15 +3742,16 @@ restart2:
     Private Sub KryptonButton9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton9.Click
         Cursor = Cursors.WaitCursor
         Dim fDate, SDate As String
+
         If osDateFrom.Checked = True Then
-            fDate = osDateFrom.Value.ToString("MM/dd/yyyy")
+            fDate = osDateFrom.Value.ToString("MM/dd/yyyy") & " " & osTimeFrom.Value.ToString("HH:mm") & ":00.000"
         Else
-            fDate = "01/01/1999"
+            fDate = "01/01/1999 00:00:00.000"
         End If
         If osDateTill.Checked = True Then
-            SDate = osDateTill.Value.ToString("MM/dd/yyyy")
+            SDate = osDateTill.Value.ToString("MM/dd/yyyy") & " " & osTimeTill.Value.ToString("HH:mm") & ":00.000"
         Else
-            SDate = "01/01/2500"
+            SDate = "01/01/2500 23:59:59.999"
         End If
 
         Dim exp As String
@@ -3730,12 +3761,16 @@ restart2:
             exp = " AND tblOut2.Price = 0 "
         End If
 
-        Dim itmm As String
+        Dim itmm As String = ""
         If osItem.Text <> "" Then
             itmm = " AND tblItems.Name LIKE N'%" & osItem.Text & "%'"
         Else
-            itmm = ""
+            If osCode.Text <> "" Then
+                itmm = " AND tblItems.Serial LIKE N'%" & osCode.Text & "%'"
+            End If
         End If
+
+
 
         Dim Query As String = "SELECT tblItems.Serial AS Code, tblItems.Name AS Item, tblOut2.CostPrice AS Cost, (tblOut2.Price / tblOut2.Qnty) AS Selling," _
             & " SUM(tblOut2.Qnty) AS Sold, SUM(tblOut2.Price) AS [ValueUSD], SUM(tblOut2.Price * dbo.curCurrency(tblOut1.[Date], tblOut1.[Time])) AS [ValueEGP]," _
@@ -3744,7 +3779,7 @@ restart2:
             & " FROM tblOut2" _
             & " INNER JOIN tblItems ON tblOut2.Item = tblItems.PrKey" _
             & " INNER JOIN tblOut1 ON tblOut2.Serial = tblOut1.Serial" _
-            & " WHERE tblOut1.[Date] BETWEEN '" & fDate & "' AND '" & SDate & "'" _
+            & " WHERE (tblOut1.[Date] + tblOut1.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _
             & exp & itmm _
             & " GROUP BY tblItems.Serial, tblItems.Name, tblOut2.CostPrice, (tblOut2.Price / tblOut2.Qnty), dbo.curCurrency(tblOut1.[Date], tblOut1.[Time])" _
             & " ORDER BY tblItems.Name;"
@@ -3757,7 +3792,7 @@ restart2:
             & " INNER JOIN tblItems ON tblOut2.Item = tblItems.PrKey" _
             & " INNER JOIN tblIn2 ON tblOut2.SoldItem = tblIn2.PrKey" _
             & " INNER JOIN tblOut1 ON tblOut2.Serial = tblOut1.Serial" _
-            & " WHERE tblOut1.[Date] BETWEEN '" & fDate & "' AND '" & SDate & "'" _
+            & " WHERE (tblOut1.[Date] + tblOut1.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _
             & exp & itmm _
             & " GROUP BY tblItems.Serial, tblItems.Name, tblIn2.UnitPrice, dbo.CurCurrency(tblOut1.[Date], tblOut1.[Time])," _
             & " (tblIn2.UnitPrice / dbo.CurCurrency(tblOut1.[Date], tblOut1.[Time])), (tblOut2.Price / tblOut2.Qnty)" _
@@ -3783,14 +3818,14 @@ restart2:
 
         If osDateFrom.Checked = True Then
             Report.XrFrom.Text = "From:"
-            Report.XrFromDate.Text = osDateFrom.Value.ToString("yyyy/MM/dd")
+            Report.XrFromDate.Text = osDateFrom.Value.ToString("yyyy/MM/dd") & " " & osTimeFrom.Value.ToString("HH:mm")
         Else
             Report.XrFrom.Text = ""
             Report.XrFromDate.Text = ""
         End If
         If osDateTill.Checked = True Then
             Report.XrTill.Text = "Till:"
-            Report.XrTillDate.Text = osDateTill.Value.ToString("yyyy/MM/dd")
+            Report.XrTillDate.Text = osDateTill.Value.ToString("yyyy/MM/dd") & " " & osTimeTill.Value.ToString("HH:mm")
         Else
             Report.XrTill.Text = ""
             Report.XrTillDate.Text = ""
@@ -3929,7 +3964,7 @@ restart2:
                 & " SELECT tblOut1.[Date], 'SELLING' AS [Type], CONVERT(NVARCHAR(5), tblOut1.[Time], 108) AS [Time], tblOut2.Item, tblOut2.Qnty, tblOut2.UnitPrice, tblOut2.Price AS [Value]" _
                 & " FROM tblOut2 INNER JOIN tblOut1 ON tblOut2.Serial = tblOut1.Serial" _
                 & " INNER JOIN tblItems ON tblItems.PrKey = tblOut2.Item" _
-                & " WHERE tblItems.Name = N'" & monItem.Text & "'" _
+                & " WHERE tblItems.Name LIKE N'%" & monItem.Text & "%'" _
                 & " AND  tblOut1.[Date] BETWEEN '" & monDateFrom.Value.ToString("MM/dd/yyyy") & "' AND '" & monDateTill.Value.ToString("MM/dd/yyyy") & "'" _
                 & " ORDER BY [Date], [Time]"
 
@@ -4609,14 +4644,14 @@ retry:
         Cursor = Cursors.WaitCursor
         Dim fDate, SDate As String
         If ossDateFrom.Checked = True Then
-            fDate = ossDateFrom.Value.ToString("MM/dd/yyyy")
+            fDate = ossDateFrom.Value.ToString("MM/dd/yyyy") & " " & ossTimeFrom.Value.ToString("HH:mm")
         Else
-            fDate = "01/01/1999"
+            fDate = "01/01/1999 00:00:00.000"
         End If
         If ossDateTill.Checked = True Then
-            SDate = ossDateTill.Value.ToString("MM/dd/yyyy")
+            SDate = ossDateTill.Value.ToString("MM/dd/yyyy") & " " & ossTimeTill.Value.ToString("HH:mm")
         Else
-            SDate = "01/01/2500"
+            SDate = "01/01/2500 23:59:59.999"
         End If
 
         Dim company As String = ""
@@ -4628,9 +4663,9 @@ retry:
             agent = " AND tblAgency.Agent = '" & ossAgent.Text & "'"
         End If
 
-        Dim Query As String = "SELECT tblOut1.[Date], tblAgency.Company, tblAgency.Agent, (SUM(tblOut1.Total) * tblAgency.Commission / 100) AS Commission, SUM(tblOut1.Total) AS Amount" _
+        Dim Query As String = "SELECT tblOut1.[Date], tblAgency.Company, tblAgency.Agent, (SUM([dbo].[RealPayment](tblOut1.Serial)) * tblAgency.Commission / 100) AS Commission, SUM([dbo].[RealPayment](tblOut1.Serial)) AS Amount" _
                               & " FROM tblOut1 INNER JOIN tblAgency ON tblOut1.Agent = tblAgency.Code" _
-                              & " WHERE tblOut1.[Date] BETWEEN '" & fDate & "' AND '" & SDate & "'" _
+                              & " WHERE (tblOut1.[Date] + tblOut1.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _
                               & company & agent _
                               & " GROUP BY tblOut1.[Date], tblAgency.Company, tblAgency.Agent, tblAgency.Commission" _
                               & " ORDER BY tblAgency.Company, tblAgency.Agent, tblOut1.[Date]"
@@ -4656,14 +4691,14 @@ retry:
 
         If ossDateFrom.Checked = True Then
             Report.XrFrom.Text = "From:"
-            Report.XrFromDate.Text = ossDateFrom.Value.ToString("yyyy/MM/dd")
+            Report.XrFromDate.Text = ossDateFrom.Value.ToString("yyyy/MM/dd") & " " & ossTimeFrom.Value.ToString("HH:mm")
         Else
             Report.XrFrom.Text = ""
             Report.XrFromDate.Text = ""
         End If
         If ossDateTill.Checked = True Then
             Report.XrTill.Text = "Till:"
-            Report.XrTillDate.Text = ossDateTill.Value.ToString("yyyy/MM/dd")
+            Report.XrTillDate.Text = ossDateTill.Value.ToString("yyyy/MM/dd") & " " & ossTimeTill.Value.ToString("HH:mm")
         Else
             Report.XrTill.Text = ""
             Report.XrTillDate.Text = ""
@@ -4724,14 +4759,14 @@ retry:
         Cursor = Cursors.WaitCursor
         Dim fDate, SDate As String
         If deDateFrom.Checked = True Then
-            fDate = deDateFrom.Value.ToString("MM/dd/yyyy")
+            fDate = deDateFrom.Value.ToString("MM/dd/yyyy") & " " & deTimeFrom.Value.ToString("HH:mm")
         Else
-            fDate = "01/01/1999"
+            fDate = "01/01/1999 00:00:00.000"
         End If
         If deDateTill.Checked = True Then
-            SDate = deDateTill.Value.ToString("MM/dd/yyyy")
+            SDate = deDateTill.Value.ToString("MM/dd/yyyy") & " " & deTimeTill.Value.ToString("HH:mm")
         Else
-            SDate = "01/01/2500"
+            SDate = "01/01/2500 23:59:59.999"
         End If
 
         Dim LogType As String = ""
@@ -4745,7 +4780,7 @@ retry:
                               & " + CHAR(10) + tblLog.cDetails END) AS Details" _
                               & " FROM tblLog" _
                               & " INNER JOIN tblLogin ON tblLogin.Sr = tblLog.cUser" _
-                              & " WHERE (tblLog.[cDate] BETWEEN '" & fDate & "' AND '" & SDate & "')" _
+                              & " WHERE ((tblLog.[cDate] + tblLog.cTime) BETWEEN '" & fDate & "' AND '" & SDate & "')" _
                               & LogType _
                               & " ORDER BY tblLog.cDate, tblLog.cTime;"
 
@@ -4769,14 +4804,14 @@ retry:
 
         If deDateFrom.Checked = True Then
             Report.XrFrom.Text = "From:"
-            Report.XrFromDate.Text = deDateFrom.Value.ToString("yyyy/MM/dd")
+            Report.XrFromDate.Text = deDateFrom.Value.ToString("yyyy/MM/dd") & " " & deTimeFrom.Value.ToString("HH:mm")
         Else
             Report.XrFrom.Text = ""
             Report.XrFromDate.Text = ""
         End If
         If deDateTill.Checked = True Then
             Report.XrTill.Text = "Till:"
-            Report.XrTillDate.Text = deDateTill.Value.ToString("yyyy/MM/dd")
+            Report.XrTillDate.Text = deDateTill.Value.ToString("yyyy/MM/dd") & " " & deTimeTill.Value.ToString("HH:mm")
         Else
             Report.XrTill.Text = ""
             Report.XrTillDate.Text = ""
@@ -4793,17 +4828,17 @@ retry:
     End Sub
 
     Private Sub btnPaxNumbers_Click(sender As Object, e As EventArgs) Handles btnPaxNumbers.Click
-        Cursor = Cursors.WaitCursor
+    Cursor = Cursors.WaitCursor
         Dim fDate, SDate As String
         If ossDateFrom.Checked = True Then
-            fDate = ossDateFrom.Value.ToString("MM/dd/yyyy")
+            fDate = ossDateFrom.Value.ToString("MM/dd/yyyy") & " " & ossTimeFrom.Value.ToString("HH:mm")
         Else
-            fDate = "01/01/1999"
+            fDate = "01/01/1999 00:00:00.000"
         End If
         If ossDateTill.Checked = True Then
-            SDate = ossDateTill.Value.ToString("MM/dd/yyyy")
+            SDate = ossDateTill.Value.ToString("MM/dd/yyyy") & " " & ossTimeTill.Value.ToString("HH:mm")
         Else
-            SDate = "01/01/2500"
+            SDate = "01/01/2500 23:59:59.999"
         End If
 
         Dim company As String = ""
@@ -4815,20 +4850,28 @@ retry:
             agent = " AND tblAgency.Agent = '" & ossAgent.Text & "'"
         End If
 
-        Dim Query As String = "SELECT [Date], Company, Agent, SUM(ADT) AS ADT, SUM(CHD) AS CHD, SUM(INF) AS INF, SUM(Driver) AS Driver, Sales " _
-                              & " FROM" _
-                              & " (" _
-                              & " SELECT tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, tblRegistery.ADT, tblRegistery.CHD," _
-                              & " tblRegistery.INF, tblRegistery.Driver, SUM(COALESCE(tblOut1.Total, 0)) AS Sales" _
+        'Dim Query As String = "SELECT [Date], Company, Agent, SUM(ADT) AS ADT, SUM(CHD) AS CHD, SUM(INF) AS INF, SUM(Driver) AS Driver, Sales " _
+        '                      & " FROM" _
+        '                      & " (" _
+        '                      & " SELECT tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, tblRegistery.ADT, tblRegistery.CHD," _
+        '                      & " tblRegistery.INF, tblRegistery.Driver, SUM(COALESCE(tblOut1.Total, 0)) AS Sales" _
+        '                      & " FROM tblRegistery" _
+        '                      & " INNER JOIN tblAgency ON tblRegistery.Agent = tblAgency.Code" _
+        '                      & " LEFT OUTER JOIN tblOut1 ON tblOut1.Agent = tblAgency.Code AND tblOut1.[Date] = tblRegistery.[Date]" _
+        '                      & " WHERE (tblRegistery.[Date] + tblRegistery.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _
+        '                      & company & agent _
+        '                      & " GROUP BY tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, tblRegistery.ADT, tblRegistery.CHD," _
+        '                      & " tblRegistery.INF, tblRegistery.Driver" _
+        '                      & " ) AA" _
+        '                      & " GROUP BY [Date], Company, Agent, Sales;"
+
+        Dim query As String = "SELECT tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, SUM(tblRegistery.ADT) AS ADT," _
+                              & " SUM(tblRegistery.CHD) AS CHD, SUM(tblRegistery.INF) AS INF, SUM(tblRegistery.Driver) AS Driver, SUM(dbo.AgentSales(tblAgency.Code, tblRegistery.Date)) AS Sales" _
                               & " FROM tblRegistery" _
-                              & " INNER JOIN tblAgency ON tblRegistery.Agent = tblAgency.Code" _
-                              & " LEFT OUTER JOIN tblOut1 ON tblOut1.Agent = tblAgency.Code AND tblOut1.[Date] = tblRegistery.[Date]" _
-                              & " WHERE tblRegistery.[Date] BETWEEN '" & fDate & "' AND '" & SDate & "'" _
+                              & " JOIN tblAgency ON tblRegistery.Agent = tblAgency.Code" _
+                              & " WHERE (tblRegistery.[Date] + tblRegistery.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _
                               & company & agent _
-                              & " GROUP BY tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, tblRegistery.ADT, tblRegistery.CHD," _
-                              & " tblRegistery.INF, tblRegistery.Driver" _
-                              & " ) AA" _
-                              & " GROUP BY [Date], Company, Agent, Sales;"
+                              & " GROUP BY tblRegistery.[Date], tblAgency.Company, tblAgency.Agent"
 
         Dim ds As New ReportsDS
         Dim da As New SqlDataAdapter(Query, myConn)
@@ -4850,14 +4893,14 @@ retry:
 
         If ossDateFrom.Checked = True Then
             Report.XrFrom.Text = "From:"
-            Report.XrFromDate.Text = ossDateFrom.Value.ToString("yyyy/MM/dd")
+            Report.XrFromDate.Text = ossDateFrom.Value.ToString("yyyy/MM/dd") & " " & ossTimeFrom.Value.ToString("HH:mm")
         Else
             Report.XrFrom.Text = ""
             Report.XrFromDate.Text = ""
         End If
         If ossDateTill.Checked = True Then
             Report.XrTill.Text = "Till:"
-            Report.XrTillDate.Text = ossDateTill.Value.ToString("yyyy/MM/dd")
+            Report.XrTillDate.Text = ossDateTill.Value.ToString("yyyy/MM/dd") & " " & ossTimeTill.Value.ToString("HH:mm")
         Else
             Report.XrTill.Text = ""
             Report.XrTillDate.Text = ""
@@ -4871,5 +4914,59 @@ retry:
 
     Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
         frmCategory.ShowDialog()
+    End Sub
+
+    Private Sub osDateFrom_CheckedChanged(sender As Object, e As EventArgs) Handles osDateFrom.CheckedChanged
+        If osDateFrom.Checked Then
+            osTimeFrom.Visible = True
+        Else
+            osTimeFrom.Visible = False
+            osTimeFrom.Value = Today & " 00:00"
+        End If
+    End Sub
+
+    Private Sub osDateTill_CheckedChanged(sender As Object, e As EventArgs) Handles osDateTill.CheckedChanged
+        If osDateTill.Checked Then
+            osTimeTill.Visible = True
+        Else
+            osTimeTill.Visible = False
+            osTimeTill.Value = Today & " 23:59"
+        End If
+    End Sub
+
+    Private Sub ossDateFrom_CheckedChanged(sender As Object, e As EventArgs) Handles ossDateFrom.CheckedChanged
+        If ossDateFrom.Checked Then
+            ossTimeFrom.Visible = True
+        Else
+            ossTimeFrom.Visible = False
+            ossTimeFrom.Value = Today & " 00:00"
+        End If
+    End Sub
+
+    Private Sub ossDateTill_CheckedChanged(sender As Object, e As EventArgs) Handles ossDateTill.CheckedChanged
+        If ossDateTill.Checked Then
+            ossTimeTill.Visible = True
+        Else
+            ossTimeTill.Visible = False
+            ossTimeTill.Value = Today & " 23:59"
+        End If
+    End Sub
+
+    Private Sub deDateFrom_CheckedChanged(sender As Object, e As EventArgs) Handles deDateFrom.CheckedChanged
+        If deDateFrom.Checked Then
+            deTimeFrom.Visible = True
+        Else
+            deTimeFrom.Visible = False
+            deTimeFrom.Value = Today & " 00:00"
+        End If
+    End Sub
+
+    Private Sub deDateTill_CheckedChanged(sender As Object, e As EventArgs) Handles deDateTill.CheckedChanged
+        If deDateTill.Checked Then
+            deTimeTill.Visible = True
+        Else
+            deTimeTill.Visible = False
+            deTimeTill.Value = Today & " 23:59"
+        End If
     End Sub
 End Class

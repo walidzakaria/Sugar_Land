@@ -20,7 +20,7 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.KryptonManager1 = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
         Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
@@ -115,6 +115,9 @@ Partial Class frmMain
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.KryptonPanel6 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.KryptonPanel5 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
+        Me.KryptonLabel47 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.iiCategory = New System.Windows.Forms.ComboBox()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.iiEnglishName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
         Me.KryptonLabel16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -179,6 +182,8 @@ Partial Class frmMain
         Me.KryptonPage6 = New ComponentFactory.Krypton.Navigator.KryptonPage()
         Me.KryptonPanel11 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.GroupControl7 = New DevExpress.XtraEditors.GroupControl()
+        Me.deTimeTill = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
+        Me.deTimeFrom = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
         Me.btnTracker = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.btnSubmit = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.deDateTill = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
@@ -187,6 +192,8 @@ Partial Class frmMain
         Me.cbLogType = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel49 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.ossTimeTill = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
+        Me.ossTimeFrom = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
         Me.btnPaxNumbers = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.btnCommissions = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.KryptonLabel37 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -197,6 +204,10 @@ Partial Class frmMain
         Me.KryptonLabel42 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.ossCompany = New System.Windows.Forms.ComboBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.KryptonLabel50 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.osCode = New System.Windows.Forms.ComboBox()
+        Me.osTimeTill = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
+        Me.osTimeFrom = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
         Me.KryptonButton9 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.KryptonLabel31 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.osDateTill = New ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker()
@@ -314,9 +325,6 @@ Partial Class frmMain
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lbMonitor = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.iiCategory = New System.Windows.Forms.ComboBox()
-        Me.KryptonLabel47 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonPanel1.SuspendLayout()
         CType(Me.KryptonDockableNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -435,7 +443,7 @@ Partial Class frmMain
         Me.KryptonDockableNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ContextMenuItemImage
         Me.KryptonDockableNavigator1.Pages.AddRange(New ComponentFactory.Krypton.Navigator.KryptonPage() {Me.KryptonPage1, Me.KryptonPage2, Me.KryptonPage3, Me.KryptonPage4, Me.KryptonPage11, Me.KryptonPage5, Me.KryptonPage6, Me.KryptonPage7, Me.KryptonPage8, Me.KryptonPage9, Me.KryptonPage10})
         Me.KryptonDockableNavigator1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.KryptonDockableNavigator1.SelectedIndex = 3
+        Me.KryptonDockableNavigator1.SelectedIndex = 6
         Me.KryptonDockableNavigator1.Size = New System.Drawing.Size(1263, 587)
         Me.KryptonDockableNavigator1.TabIndex = 0
         Me.KryptonDockableNavigator1.TabStop = False
@@ -471,12 +479,12 @@ Partial Class frmMain
         '
         Me.iDgv.AllowUserToAddRows = False
         Me.iDgv.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Teal
-        Me.iDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Teal
+        Me.iDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.iDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.iDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.iDgv.ColumnHeadersHeight = 60
@@ -1681,6 +1689,45 @@ Partial Class frmMain
         Me.KryptonPanel5.Size = New System.Drawing.Size(624, 563)
         Me.KryptonPanel5.TabIndex = 1
         '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SimpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
+        Me.SimpleButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton4.Location = New System.Drawing.Point(446, 367)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(32, 23)
+        Me.SimpleButton4.TabIndex = 95
+        Me.SimpleButton4.TabStop = False
+        '
+        'KryptonLabel47
+        '
+        Me.KryptonLabel47.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel47.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.KryptonLabel47.Location = New System.Drawing.Point(105, 365)
+        Me.KryptonLabel47.Name = "KryptonLabel47"
+        Me.KryptonLabel47.Size = New System.Drawing.Size(83, 24)
+        Me.KryptonLabel47.StateCommon.LongText.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel47.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel47.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far
+        Me.KryptonLabel47.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Near
+        Me.KryptonLabel47.TabIndex = 94
+        Me.KryptonLabel47.Values.Text = "Category:"
+        '
+        'iiCategory
+        '
+        Me.iiCategory.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.iiCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.iiCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.iiCategory.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.iiCategory.FormattingEnabled = True
+        Me.iiCategory.Location = New System.Drawing.Point(243, 364)
+        Me.iiCategory.Name = "iiCategory"
+        Me.iiCategory.Size = New System.Drawing.Size(189, 27)
+        Me.iiCategory.TabIndex = 93
+        Me.iiCategory.TabStop = False
+        '
         'SimpleButton3
         '
         Me.SimpleButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2494,6 +2541,8 @@ Partial Class frmMain
         '
         Me.GroupControl7.AppearanceCaption.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControl7.AppearanceCaption.Options.UseFont = True
+        Me.GroupControl7.Controls.Add(Me.deTimeTill)
+        Me.GroupControl7.Controls.Add(Me.deTimeFrom)
         Me.GroupControl7.Controls.Add(Me.btnTracker)
         Me.GroupControl7.Controls.Add(Me.btnSubmit)
         Me.GroupControl7.Controls.Add(Me.deDateTill)
@@ -2507,6 +2556,36 @@ Partial Class frmMain
         Me.GroupControl7.Size = New System.Drawing.Size(417, 534)
         Me.GroupControl7.TabIndex = 3
         Me.GroupControl7.Text = "LOGS REPORT"
+        '
+        'deTimeTill
+        '
+        Me.deTimeTill.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.deTimeTill.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.deTimeTill.CustomFormat = "HH:mm"
+        Me.deTimeTill.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.deTimeTill.Location = New System.Drawing.Point(253, 107)
+        Me.deTimeTill.Name = "deTimeTill"
+        Me.deTimeTill.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.deTimeTill.ShowUpDown = True
+        Me.deTimeTill.Size = New System.Drawing.Size(89, 25)
+        Me.deTimeTill.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deTimeTill.TabIndex = 85
+        Me.deTimeTill.TabStop = False
+        '
+        'deTimeFrom
+        '
+        Me.deTimeFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.deTimeFrom.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.deTimeFrom.CustomFormat = "HH:mm"
+        Me.deTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.deTimeFrom.Location = New System.Drawing.Point(107, 107)
+        Me.deTimeFrom.Name = "deTimeFrom"
+        Me.deTimeFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.deTimeFrom.ShowUpDown = True
+        Me.deTimeFrom.Size = New System.Drawing.Size(89, 25)
+        Me.deTimeFrom.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deTimeFrom.TabIndex = 84
+        Me.deTimeFrom.TabStop = False
         '
         'btnTracker
         '
@@ -2534,7 +2613,7 @@ Partial Class frmMain
         Me.deDateTill.CalendarTodayDate = New Date(2015, 5, 22, 0, 0, 0, 0)
         Me.deDateTill.Checked = False
         Me.deDateTill.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.deDateTill.Location = New System.Drawing.Point(254, 75)
+        Me.deDateTill.Location = New System.Drawing.Point(254, 74)
         Me.deDateTill.Name = "deDateTill"
         Me.deDateTill.ShowCheckBox = True
         Me.deDateTill.Size = New System.Drawing.Size(129, 25)
@@ -2546,7 +2625,7 @@ Partial Class frmMain
         Me.deDateFrom.CalendarTodayDate = New Date(2015, 9, 8, 0, 0, 0, 0)
         Me.deDateFrom.Checked = False
         Me.deDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.deDateFrom.Location = New System.Drawing.Point(107, 75)
+        Me.deDateFrom.Location = New System.Drawing.Point(107, 74)
         Me.deDateFrom.Name = "deDateFrom"
         Me.deDateFrom.ShowCheckBox = True
         Me.deDateFrom.Size = New System.Drawing.Size(129, 25)
@@ -2581,7 +2660,7 @@ Partial Class frmMain
         'KryptonLabel49
         '
         Me.KryptonLabel49.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel49.Location = New System.Drawing.Point(16, 73)
+        Me.KryptonLabel49.Location = New System.Drawing.Point(16, 74)
         Me.KryptonLabel49.Name = "KryptonLabel49"
         Me.KryptonLabel49.Size = New System.Drawing.Size(52, 24)
         Me.KryptonLabel49.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2593,6 +2672,8 @@ Partial Class frmMain
         '
         Me.GroupControl4.AppearanceCaption.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControl4.AppearanceCaption.Options.UseFont = True
+        Me.GroupControl4.Controls.Add(Me.ossTimeTill)
+        Me.GroupControl4.Controls.Add(Me.ossTimeFrom)
         Me.GroupControl4.Controls.Add(Me.btnPaxNumbers)
         Me.GroupControl4.Controls.Add(Me.btnCommissions)
         Me.GroupControl4.Controls.Add(Me.KryptonLabel37)
@@ -2608,6 +2689,36 @@ Partial Class frmMain
         Me.GroupControl4.Size = New System.Drawing.Size(417, 534)
         Me.GroupControl4.TabIndex = 2
         Me.GroupControl4.Text = "AGENTS REPORT"
+        '
+        'ossTimeTill
+        '
+        Me.ossTimeTill.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ossTimeTill.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.ossTimeTill.CustomFormat = "HH:mm"
+        Me.ossTimeTill.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ossTimeTill.Location = New System.Drawing.Point(253, 106)
+        Me.ossTimeTill.Name = "ossTimeTill"
+        Me.ossTimeTill.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ossTimeTill.ShowUpDown = True
+        Me.ossTimeTill.Size = New System.Drawing.Size(89, 25)
+        Me.ossTimeTill.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ossTimeTill.TabIndex = 85
+        Me.ossTimeTill.TabStop = False
+        '
+        'ossTimeFrom
+        '
+        Me.ossTimeFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ossTimeFrom.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.ossTimeFrom.CustomFormat = "HH:mm"
+        Me.ossTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ossTimeFrom.Location = New System.Drawing.Point(107, 106)
+        Me.ossTimeFrom.Name = "ossTimeFrom"
+        Me.ossTimeFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ossTimeFrom.ShowUpDown = True
+        Me.ossTimeFrom.Size = New System.Drawing.Size(89, 25)
+        Me.ossTimeFrom.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ossTimeFrom.TabIndex = 84
+        Me.ossTimeFrom.TabStop = False
         '
         'btnPaxNumbers
         '
@@ -2632,7 +2743,7 @@ Partial Class frmMain
         'KryptonLabel37
         '
         Me.KryptonLabel37.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel37.Location = New System.Drawing.Point(16, 176)
+        Me.KryptonLabel37.Location = New System.Drawing.Point(16, 180)
         Me.KryptonLabel37.Name = "KryptonLabel37"
         Me.KryptonLabel37.Size = New System.Drawing.Size(60, 24)
         Me.KryptonLabel37.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2667,7 +2778,7 @@ Partial Class frmMain
         'KryptonLabel41
         '
         Me.KryptonLabel41.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel41.Location = New System.Drawing.Point(16, 130)
+        Me.KryptonLabel41.Location = New System.Drawing.Point(16, 146)
         Me.KryptonLabel41.Name = "KryptonLabel41"
         Me.KryptonLabel41.Size = New System.Drawing.Size(86, 24)
         Me.KryptonLabel41.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2681,7 +2792,7 @@ Partial Class frmMain
         Me.ossAgent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ossAgent.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ossAgent.FormattingEnabled = True
-        Me.ossAgent.Location = New System.Drawing.Point(107, 175)
+        Me.ossAgent.Location = New System.Drawing.Point(107, 179)
         Me.ossAgent.Name = "ossAgent"
         Me.ossAgent.Size = New System.Drawing.Size(276, 27)
         Me.ossAgent.TabIndex = 77
@@ -2704,7 +2815,7 @@ Partial Class frmMain
         Me.ossCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ossCompany.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ossCompany.FormattingEnabled = True
-        Me.ossCompany.Location = New System.Drawing.Point(107, 130)
+        Me.ossCompany.Location = New System.Drawing.Point(107, 146)
         Me.ossCompany.Name = "ossCompany"
         Me.ossCompany.Size = New System.Drawing.Size(276, 27)
         Me.ossCompany.TabIndex = 78
@@ -2714,6 +2825,10 @@ Partial Class frmMain
         '
         Me.GroupControl2.AppearanceCaption.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControl2.AppearanceCaption.Options.UseFont = True
+        Me.GroupControl2.Controls.Add(Me.KryptonLabel50)
+        Me.GroupControl2.Controls.Add(Me.osCode)
+        Me.GroupControl2.Controls.Add(Me.osTimeTill)
+        Me.GroupControl2.Controls.Add(Me.osTimeFrom)
         Me.GroupControl2.Controls.Add(Me.KryptonButton9)
         Me.GroupControl2.Controls.Add(Me.KryptonLabel31)
         Me.GroupControl2.Controls.Add(Me.osDateTill)
@@ -2728,6 +2843,61 @@ Partial Class frmMain
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "OUT REPORT"
         '
+        'KryptonLabel50
+        '
+        Me.KryptonLabel50.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.KryptonLabel50.Location = New System.Drawing.Point(21, 180)
+        Me.KryptonLabel50.Name = "KryptonLabel50"
+        Me.KryptonLabel50.Size = New System.Drawing.Size(54, 24)
+        Me.KryptonLabel50.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel50.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far
+        Me.KryptonLabel50.TabIndex = 84
+        Me.KryptonLabel50.Values.Text = "Code:"
+        '
+        'osCode
+        '
+        Me.osCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.osCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.osCode.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.osCode.FormattingEnabled = True
+        Me.osCode.Location = New System.Drawing.Point(107, 179)
+        Me.osCode.Name = "osCode"
+        Me.osCode.Size = New System.Drawing.Size(276, 27)
+        Me.osCode.TabIndex = 83
+        Me.osCode.TabStop = False
+        '
+        'osTimeTill
+        '
+        Me.osTimeTill.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.osTimeTill.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.osTimeTill.CustomFormat = "HH:mm"
+        Me.osTimeTill.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.osTimeTill.Location = New System.Drawing.Point(253, 107)
+        Me.osTimeTill.Name = "osTimeTill"
+        Me.osTimeTill.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.osTimeTill.ShowUpDown = True
+        Me.osTimeTill.Size = New System.Drawing.Size(89, 25)
+        Me.osTimeTill.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.osTimeTill.TabIndex = 82
+        Me.osTimeTill.TabStop = False
+        Me.osTimeTill.Visible = False
+        '
+        'osTimeFrom
+        '
+        Me.osTimeFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.osTimeFrom.CalendarTodayDate = New Date(2015, 6, 18, 0, 0, 0, 0)
+        Me.osTimeFrom.CustomFormat = "HH:mm"
+        Me.osTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.osTimeFrom.Location = New System.Drawing.Point(107, 107)
+        Me.osTimeFrom.Name = "osTimeFrom"
+        Me.osTimeFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.osTimeFrom.ShowUpDown = True
+        Me.osTimeFrom.Size = New System.Drawing.Size(89, 25)
+        Me.osTimeFrom.StateCommon.Content.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.osTimeFrom.TabIndex = 81
+        Me.osTimeFrom.TabStop = False
+        Me.osTimeFrom.Visible = False
+        '
         'KryptonButton9
         '
         Me.KryptonButton9.DialogResult = System.Windows.Forms.DialogResult.OK
@@ -2741,7 +2911,7 @@ Partial Class frmMain
         'KryptonLabel31
         '
         Me.KryptonLabel31.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel31.Location = New System.Drawing.Point(21, 176)
+        Me.KryptonLabel31.Location = New System.Drawing.Point(21, 149)
         Me.KryptonLabel31.Name = "KryptonLabel31"
         Me.KryptonLabel31.Size = New System.Drawing.Size(52, 24)
         Me.KryptonLabel31.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2801,7 +2971,7 @@ Partial Class frmMain
         Me.osItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.osItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.osItem.FormattingEnabled = True
-        Me.osItem.Location = New System.Drawing.Point(107, 173)
+        Me.osItem.Location = New System.Drawing.Point(107, 146)
         Me.osItem.Name = "osItem"
         Me.osItem.Size = New System.Drawing.Size(276, 27)
         Me.osItem.TabIndex = 78
@@ -3681,45 +3851,6 @@ Partial Class frmMain
         '
         Me.Timer1.Interval = 500
         '
-        'iiCategory
-        '
-        Me.iiCategory.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.iiCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.iiCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.iiCategory.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.iiCategory.FormattingEnabled = True
-        Me.iiCategory.Location = New System.Drawing.Point(243, 364)
-        Me.iiCategory.Name = "iiCategory"
-        Me.iiCategory.Size = New System.Drawing.Size(189, 27)
-        Me.iiCategory.TabIndex = 93
-        Me.iiCategory.TabStop = False
-        '
-        'KryptonLabel47
-        '
-        Me.KryptonLabel47.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel47.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel47.Location = New System.Drawing.Point(105, 365)
-        Me.KryptonLabel47.Name = "KryptonLabel47"
-        Me.KryptonLabel47.Size = New System.Drawing.Size(83, 24)
-        Me.KryptonLabel47.StateCommon.LongText.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel47.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel47.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far
-        Me.KryptonLabel47.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Near
-        Me.KryptonLabel47.TabIndex = 94
-        Me.KryptonLabel47.Values.Text = "Category:"
-        '
-        'SimpleButton4
-        '
-        Me.SimpleButton4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SimpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.SimpleButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(446, 367)
-        Me.SimpleButton4.Name = "SimpleButton4"
-        Me.SimpleButton4.Size = New System.Drawing.Size(32, 23)
-        Me.SimpleButton4.TabIndex = 95
-        Me.SimpleButton4.TabStop = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4138,5 +4269,13 @@ Partial Class frmMain
     Private WithEvents KryptonLabel47 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents iiCategory As System.Windows.Forms.ComboBox
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents deTimeTill As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Friend WithEvents deTimeFrom As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Friend WithEvents ossTimeTill As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Friend WithEvents ossTimeFrom As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Friend WithEvents osTimeTill As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Friend WithEvents osTimeFrom As ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker
+    Private WithEvents KryptonLabel50 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents osCode As System.Windows.Forms.ComboBox
 
 End Class

@@ -98,7 +98,10 @@ Public Class frmSignup
 
             Try
                 Using Reg = New SqlCommand("INSERT INTO tblLogin (UserName, Password, Authority) Values (N'" & theName & "', '" & ExClass.GenerateHash(PasswordTextBox.Text) & "', '" & Auth & "')", myConn)
-                    myConn.Open()
+                    If myConn.State = ConnectionState.Closed Then
+                        myConn.Open()
+                    End If
+
                     Reg.ExecuteNonQuery()
                     myConn.Close()
                 End Using

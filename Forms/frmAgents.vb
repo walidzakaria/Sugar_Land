@@ -141,8 +141,15 @@ Public Class frmAgents
                 Exit Sub
             End If
 
+            If Not IsDBNull(GridView2.GetRowCellValue(x, "GuestDiscount")) Then
+                Discount = GridView2.GetRowCellValue(x, "GuestDiscount").ToString
+            Else
+                MsgBox("You should fill the guest discount!")
+                GridView2.FocusedRowHandle = x
+                Exit Sub
+            End If
 
-            Discount = 5
+            'Discount = 5
             Commission = Val(GridView2.GetRowCellValue(x, "Commission"))
             If Commission = 0 Then Commission = 5
 
@@ -152,7 +159,7 @@ Public Class frmAgents
                 Query1 += " ('" & Company & "', '" & Agent & "', '" & PinCode & "', '" & Discount & "', '" & Commission & "'),"
             Else
                 Query2 += " UPDATE tblAgency SET Company = '" & Company & "', Agent = '" & Agent & "', PinCode = '" & PinCode _
-                    & "', Commission = '" & Commission & "' WHERE Code = " & Code & ";"
+                    & "', Commission = '" & Commission & "', GuestDiscount = " & Discount & " WHERE Code = " & Code & ";"
             End If
         Next
         If Query1 <> "" Then

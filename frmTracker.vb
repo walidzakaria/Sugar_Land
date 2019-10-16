@@ -13,6 +13,21 @@ Partial Public Class frmTracker
 
     Private Sub fillData()
         CashierNew.SplashScreenManager1.ShowWaitForm()
+
+        Dim fDate, SDate As String
+        If frmMain.deDateFrom.Checked = True Then
+            fDate = frmMain.deDateFrom.Value.ToString("MM/dd/yyyy") & " " & frmMain.deTimeFrom.Value.ToString("HH:mm")
+        Else
+            fDate = "01/01/1999 00:00:00.000"
+        End If
+        If frmMain.deDateTill.Checked = True Then
+            SDate = frmMain.deDateTill.Value.ToString("MM/dd/yyyy") & " " & frmMain.deTimeTill.Value.ToString("HH:mm")
+        Else
+            SDate = "01/01/2500 23:59:59.999"
+        End If
+
+
+
         Dim Query As String = "SELECT tblOut2.Serial AS Invoice, tblOut1.[Date], tblOut1.[Time], tblOut1.CardCode, tblAgency.Company," _
                               & " tblAgency.Agent, tblItems.Serial AS Code, tblItems.Name AS ItemName, tblOut2.Qnty, tblOut2.UnitPrice, tblOut2.Discount, tblOut2.Price AS [Value]," _
                               & " tblLogin.UserName AS Cashier" _
@@ -20,7 +35,8 @@ Partial Public Class frmTracker
                               & " INNER JOIN tblItems ON tblOut2.Item = tblItems.PrKey" _
                               & " INNER JOIN tblOut1 ON tblOut2.Serial = tblOut1.Serial" _
                               & " INNER JOIN tblAgency ON tblOut1.Agent = tblAgency.Code" _
-                              & " INNER JOIN tblLogin ON tblOut1.[User] = tblLogin.Sr;"
+                              & " INNER JOIN tblLogin ON tblOut1.[User] = tblLogin.Sr" _
+                              & " WHERE (tblOut1.[Date] + tblOut1.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "';"
 
         Dim dt As New DataTable
         Using cmd = New SqlCommand(Query, myConn)

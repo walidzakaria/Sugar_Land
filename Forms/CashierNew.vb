@@ -227,7 +227,7 @@ Public Class CashierNew
             cbSuspended.DataSource = ds.Tables(0)
             cbSuspended.DisplayMember = "Invoice"
             cbSuspended.ValueMember = "PrKey"
-            cbSuspended.Text = Nothing
+            cbSuspended.SelectedIndex = -1
 
             myConn.Close()
         End Using

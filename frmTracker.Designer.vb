@@ -38,6 +38,7 @@ Partial Public Class frmTracker
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,7 +49,6 @@ Partial Public Class frmTracker
         Me.itemLabel = New DevExpress.XtraLayout.LayoutControlItem()
         Me.itemGrid = New DevExpress.XtraLayout.LayoutControlItem()
         Me.windowsUIButtonPanel = New DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.layoutControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.layoutControl.SuspendLayout()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,9 +101,11 @@ Partial Public Class frmTracker
         '
         Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn3, Me.GridColumn1, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn13, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
         Me.gridView.GridControl = Me.gridControl
+        Me.gridView.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qnty", Me.GridColumn8, ""), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Value", Me.GridColumn11, "(Value: SUM={0:0.##})")})
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
         Me.gridView.OptionsSelection.MultiSelect = True
+        Me.gridView.OptionsView.ShowFooter = True
         '
         'GridColumn2
         '
@@ -163,6 +165,14 @@ Partial Public Class frmTracker
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
         '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Code"
+        Me.GridColumn13.FieldName = "Code"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 6
+        '
         'GridColumn7
         '
         Me.GridColumn7.Caption = "Item"
@@ -178,6 +188,7 @@ Partial Public Class frmTracker
         Me.GridColumn8.FieldName = "Qnty"
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.OptionsColumn.AllowEdit = False
+        Me.GridColumn8.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qnty", "{0:0.##}")})
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 8
         '
@@ -205,6 +216,7 @@ Partial Public Class frmTracker
         Me.GridColumn11.FieldName = "Value"
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.OptionsColumn.AllowEdit = False
+        Me.GridColumn11.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Value", "{0:0.##}")})
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 11
         '
@@ -280,14 +292,6 @@ Partial Public Class frmTracker
         Me.windowsUIButtonPanel.TabIndex = 5
         Me.windowsUIButtonPanel.Text = "windowsUIButtonPanel"
         Me.windowsUIButtonPanel.UseButtonBackgroundImages = False
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.Caption = "Code"
-        Me.GridColumn13.FieldName = "Code"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 6
         '
         'frmTracker
         '

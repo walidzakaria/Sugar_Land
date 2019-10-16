@@ -5,8 +5,8 @@
     'Public Shared myConn As String = "Data Source=192.168.0.200\Master;Initial Catalog=Old_MasterPro;User ID=Master01;Password=Master123"
     
     Public Shared MarketName As String = "Sugar Land"
-    Public Shared AppDemo As Boolean = True
-    Public Shared DemoDate As Date = #11/24/2019#
+    Public Shared AppDemo As Boolean = False
+    Public Shared DemoDate As Date = #11/24/2028#
     Public Shared InvoiceLimits As Integer = 28000000
     Public Shared BackupDays As Integer = 7
     ''''to reset db

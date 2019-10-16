@@ -31,9 +31,9 @@ Partial Class frmCash
         Me.cSum = New DevExpress.XtraEditors.TextEdit()
         Me.lblTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonManager = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
         Me.btCancel = New DevExpress.XtraEditors.SimpleButton()
         Me.btOK = New DevExpress.XtraEditors.SimpleButton()
+        Me.KryptonManager = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
         CType(Me.KryptonPanel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonPanel.SuspendLayout()
         CType(Me.cCurrencyTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,17 +170,13 @@ Partial Class frmCash
         Me.KryptonLabel4.TabIndex = 66
         Me.KryptonLabel4.Values.Text = "Amount:"
         '
-        'KryptonManager
-        '
-        Me.KryptonManager.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Office2010Silver
-        '
         'btCancel
         '
         Me.btCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btCancel.Appearance.Font = New System.Drawing.Font("Tahoma", 16.0!)
         Me.btCancel.Appearance.Options.UseFont = True
         Me.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btCancel.Image = CType(resources.GetObject("btCancel.Image"), System.Drawing.Image)
+        Me.btCancel.ImageOptions.Image = CType(resources.GetObject("btCancel.ImageOptions.Image"), System.Drawing.Image)
         Me.btCancel.Location = New System.Drawing.Point(309, 207)
         Me.btCancel.Name = "btCancel"
         Me.btCancel.Size = New System.Drawing.Size(126, 38)
@@ -192,12 +188,16 @@ Partial Class frmCash
         Me.btOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btOK.Appearance.Font = New System.Drawing.Font("Tahoma", 16.0!)
         Me.btOK.Appearance.Options.UseFont = True
-        Me.btOK.Image = CType(resources.GetObject("btOK.Image"), System.Drawing.Image)
+        Me.btOK.ImageOptions.Image = CType(resources.GetObject("btOK.ImageOptions.Image"), System.Drawing.Image)
         Me.btOK.Location = New System.Drawing.Point(177, 207)
         Me.btOK.Name = "btOK"
         Me.btOK.Size = New System.Drawing.Size(126, 38)
         Me.btOK.TabIndex = 5
         Me.btOK.Text = "OK"
+        '
+        'KryptonManager
+        '
+        Me.KryptonManager.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Office2010Silver
         '
         'frmCash
         '
