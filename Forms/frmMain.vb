@@ -4866,7 +4866,7 @@ retry:
         '                      & " GROUP BY [Date], Company, Agent, Sales;"
 
         Dim query As String = "SELECT tblRegistery.[Date], tblAgency.Company, tblAgency.Agent, SUM(tblRegistery.ADT) AS ADT," _
-                              & " SUM(tblRegistery.CHD) AS CHD, SUM(tblRegistery.INF) AS INF, SUM(tblRegistery.Driver) AS Driver, SUM(dbo.AgentSales(tblAgency.Code, tblRegistery.Date)) AS Sales" _
+                              & " SUM(tblRegistery.CHD) AS CHD, SUM(tblRegistery.INF) AS INF, SUM(tblRegistery.Driver) AS Driver, AVG(dbo.AgentSales(tblAgency.Code, tblRegistery.Date)) AS Sales" _
                               & " FROM tblRegistery" _
                               & " JOIN tblAgency ON tblRegistery.Agent = tblAgency.Code" _
                               & " WHERE (tblRegistery.[Date] + tblRegistery.[Time]) BETWEEN '" & fDate & "' AND '" & SDate & "'" _

@@ -12,15 +12,7 @@ alter table tblitems add constraint FK_Category foreign key (Category) reference
 
 
 ------------------
-create function dbo.AgentSales (@Agent INT, @Date Date)
-returns decimal(14,2) as
-begin
-	declare @Result decimal(14,2);
-	set @Result = (select sum(coalesce(tblOut1.Total, 0)) from tblOut1 where tblOut1.Agent = @Agent and tblOut1.[Date] = @Date);
-	SET @Result = COALESCE(@Result, 0);
-	return @Result;
-end
------------------
+
 CREATE FUNCTION [dbo].[RealPayment]
 (
     @Serial bigint
@@ -30,12 +22,11 @@ AS
 BEGIN
 	DECLARE @Result DECIMAL(14,2) = (
 	SELECT TOP 1 ((tblOut1.pUSD - cUSD) 
-	+ ((tblOut1.pEGP - tblOut1.cEGP) / tblCurrency.EGP)
+	+ ((tblOut1.pEGP + tblOut1.pVisa - tblOut1.cEGP) / tblCurrency.EGP)
 	+ ((tblOut1.pEUR - tblOut1.cEUR) / tblCurrency.EUR)
 	+ ((tblOut1.pGBP - tblOut1.cGBP) / tblCurrency.GBP)
 	+ ((tblOut1.pRUB - tblOut1.cRUB) / tblCurrency.RUB)
-	+ ((tblOut1.pUAH - tblOut1.cUAH) / tblCurrency.UAH)
-	+ tblOut1.pVisa)
+	+ ((tblOut1.pUAH - tblOut1.cUAH) / tblCurrency.UAH))
 	FROM tblOut1, tblCurrency
 	WHERE tblOut1.Serial = @Serial
 	and (tblOut1.Date + tblOut1.Time) >= (tblCurrency.Date + tblCurrency.Time)
@@ -45,3 +36,13 @@ BEGIN
 
 	return @Result;
 END
+
+--------------
+create function [dbo].[AgentSales] (@Agent INT, @Date Date)
+returns decimal(14,2) as
+begin
+	declare @Result decimal(14,2);
+	set @Result = (select sum(coalesce(dbo.RealPayment(tblOut1.Serial), 0)) from tblOut1 where tblOut1.Agent = @Agent and tblOut1.[Date] = @Date);
+	set @Result = COAlesce(@Result, 0);
+	return @Result;
+end
