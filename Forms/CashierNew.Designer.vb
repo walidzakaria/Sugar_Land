@@ -23,42 +23,43 @@ Partial Class CashierNew
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CashierNew))
         Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition5 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition9 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition10 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition6 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition7 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim ColumnDefinition10 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition11 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition12 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition13 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition14 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition15 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition16 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition17 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition8 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition9 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim ColumnDefinition17 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition18 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition19 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition10 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition11 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition12 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition13 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim ColumnDefinition19 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition20 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition21 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition22 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition23 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition24 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition25 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition26 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition14 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition15 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -93,17 +94,27 @@ Partial Class CashierNew
         Me.lblShowAgent = New DevExpress.XtraBars.BarStaticItem()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LayoutControl5 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtRrEur = New DevExpress.XtraEditors.TextEdit()
         Me.txtRGBP = New DevExpress.XtraEditors.TextEdit()
         Me.txtREGP = New DevExpress.XtraEditors.TextEdit()
         Me.txtRRUB = New DevExpress.XtraEditors.TextEdit()
         Me.txtRUAH = New DevExpress.XtraEditors.TextEdit()
         Me.txtREUR = New DevExpress.XtraEditors.TextEdit()
+        Me.txtRrEgp = New DevExpress.XtraEditors.TextEdit()
+        Me.txtRrGbp = New DevExpress.XtraEditors.TextEdit()
+        Me.txtRrRub = New DevExpress.XtraEditors.TextEdit()
+        Me.txtRrUah = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlGroup5 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem27 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem28 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem29 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem30 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem22 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem23 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControl3 = New DevExpress.XtraLayout.LayoutControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.cUSD = New DevExpress.XtraEditors.TextEdit()
@@ -224,17 +235,27 @@ Partial Class CashierNew
         Me.PanelControl3.SuspendLayout()
         CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl5.SuspendLayout()
+        CType(Me.txtRrEur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRGBP.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtREGP.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRRUB.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRUAH.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtREUR.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRrEgp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRrGbp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRrRub.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRrUah.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl3.SuspendLayout()
         CType(Me.cUSD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -629,7 +650,7 @@ Partial Class CashierNew
         Me.RibbonStatusBar1.ItemLinks.Add(Me.BarStaticItem2)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.BarStaticItem3)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.lblAgent)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 477)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 757)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(1032, 27)
@@ -705,17 +726,22 @@ Partial Class CashierNew
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControl3.Location = New System.Drawing.Point(0, 127)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(434, 350)
+        Me.PanelControl3.Size = New System.Drawing.Size(434, 630)
         Me.PanelControl3.TabIndex = 14
         '
         'LayoutControl5
         '
         Me.LayoutControl5.AllowCustomization = False
+        Me.LayoutControl5.Controls.Add(Me.txtRrEur)
         Me.LayoutControl5.Controls.Add(Me.txtRGBP)
         Me.LayoutControl5.Controls.Add(Me.txtREGP)
         Me.LayoutControl5.Controls.Add(Me.txtRRUB)
         Me.LayoutControl5.Controls.Add(Me.txtRUAH)
         Me.LayoutControl5.Controls.Add(Me.txtREUR)
+        Me.LayoutControl5.Controls.Add(Me.txtRrEgp)
+        Me.LayoutControl5.Controls.Add(Me.txtRrGbp)
+        Me.LayoutControl5.Controls.Add(Me.txtRrRub)
+        Me.LayoutControl5.Controls.Add(Me.txtRrUah)
         Me.LayoutControl5.Dock = System.Windows.Forms.DockStyle.Top
         Me.LayoutControl5.Location = New System.Drawing.Point(2, 377)
         Me.LayoutControl5.Name = "LayoutControl5"
@@ -725,6 +751,19 @@ Partial Class CashierNew
         Me.LayoutControl5.Size = New System.Drawing.Size(430, 176)
         Me.LayoutControl5.TabIndex = 130
         Me.LayoutControl5.Text = "LayoutControl9"
+        '
+        'txtRrEur
+        '
+        Me.txtRrEur.Location = New System.Drawing.Point(258, 4)
+        Me.txtRrEur.Name = "txtRrEur"
+        Me.txtRrEur.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
+        Me.txtRrEur.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.txtRrEur.Properties.Appearance.Options.UseFont = True
+        Me.txtRrEur.Properties.ReadOnly = True
+        Me.txtRrEur.Size = New System.Drawing.Size(160, 30)
+        Me.txtRrEur.StyleController = Me.LayoutControl5
+        Me.txtRrEur.TabIndex = 4
+        Me.txtRrEur.TabStop = False
         '
         'txtRGBP
         '
@@ -739,7 +778,7 @@ Partial Class CashierNew
         Me.txtRGBP.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.txtRGBP.Properties.Mask.EditMask = "dd/MM/yyyy"
         Me.txtRGBP.Properties.ReadOnly = True
-        Me.txtRGBP.Size = New System.Drawing.Size(312, 30)
+        Me.txtRGBP.Size = New System.Drawing.Size(148, 30)
         Me.txtRGBP.StyleController = Me.LayoutControl5
         Me.txtRGBP.TabIndex = 1
         Me.txtRGBP.TabStop = False
@@ -752,7 +791,7 @@ Partial Class CashierNew
         Me.txtREGP.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
         Me.txtREGP.Properties.Appearance.Options.UseFont = True
         Me.txtREGP.Properties.ReadOnly = True
-        Me.txtREGP.Size = New System.Drawing.Size(312, 30)
+        Me.txtREGP.Size = New System.Drawing.Size(148, 30)
         Me.txtREGP.StyleController = Me.LayoutControl5
         Me.txtREGP.TabIndex = 0
         Me.txtREGP.TabStop = False
@@ -765,7 +804,7 @@ Partial Class CashierNew
         Me.txtRRUB.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
         Me.txtRRUB.Properties.Appearance.Options.UseFont = True
         Me.txtRRUB.Properties.ReadOnly = True
-        Me.txtRRUB.Size = New System.Drawing.Size(312, 30)
+        Me.txtRRUB.Size = New System.Drawing.Size(148, 30)
         Me.txtRRUB.StyleController = Me.LayoutControl5
         Me.txtRRUB.TabIndex = 0
         Me.txtRRUB.TabStop = False
@@ -778,7 +817,7 @@ Partial Class CashierNew
         Me.txtRUAH.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
         Me.txtRUAH.Properties.Appearance.Options.UseFont = True
         Me.txtRUAH.Properties.ReadOnly = True
-        Me.txtRUAH.Size = New System.Drawing.Size(312, 30)
+        Me.txtRUAH.Size = New System.Drawing.Size(148, 30)
         Me.txtRUAH.StyleController = Me.LayoutControl5
         Me.txtRUAH.TabIndex = 0
         Me.txtRUAH.TabStop = False
@@ -791,10 +830,62 @@ Partial Class CashierNew
         Me.txtREUR.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
         Me.txtREUR.Properties.Appearance.Options.UseFont = True
         Me.txtREUR.Properties.ReadOnly = True
-        Me.txtREUR.Size = New System.Drawing.Size(312, 30)
+        Me.txtREUR.Size = New System.Drawing.Size(148, 30)
         Me.txtREUR.StyleController = Me.LayoutControl5
         Me.txtREUR.TabIndex = 0
         Me.txtREUR.TabStop = False
+        '
+        'txtRrEgp
+        '
+        Me.txtRrEgp.Location = New System.Drawing.Point(258, 38)
+        Me.txtRrEgp.Name = "txtRrEgp"
+        Me.txtRrEgp.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
+        Me.txtRrEgp.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.txtRrEgp.Properties.Appearance.Options.UseFont = True
+        Me.txtRrEgp.Properties.ReadOnly = True
+        Me.txtRrEgp.Size = New System.Drawing.Size(160, 30)
+        Me.txtRrEgp.StyleController = Me.LayoutControl5
+        Me.txtRrEgp.TabIndex = 4
+        Me.txtRrEgp.TabStop = False
+        '
+        'txtRrGbp
+        '
+        Me.txtRrGbp.Location = New System.Drawing.Point(258, 72)
+        Me.txtRrGbp.Name = "txtRrGbp"
+        Me.txtRrGbp.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
+        Me.txtRrGbp.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.txtRrGbp.Properties.Appearance.Options.UseFont = True
+        Me.txtRrGbp.Properties.ReadOnly = True
+        Me.txtRrGbp.Size = New System.Drawing.Size(160, 30)
+        Me.txtRrGbp.StyleController = Me.LayoutControl5
+        Me.txtRrGbp.TabIndex = 4
+        Me.txtRrGbp.TabStop = False
+        '
+        'txtRrRub
+        '
+        Me.txtRrRub.Location = New System.Drawing.Point(258, 106)
+        Me.txtRrRub.Name = "txtRrRub"
+        Me.txtRrRub.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
+        Me.txtRrRub.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.txtRrRub.Properties.Appearance.Options.UseFont = True
+        Me.txtRrRub.Properties.ReadOnly = True
+        Me.txtRrRub.Size = New System.Drawing.Size(160, 30)
+        Me.txtRrRub.StyleController = Me.LayoutControl5
+        Me.txtRrRub.TabIndex = 4
+        Me.txtRrRub.TabStop = False
+        '
+        'txtRrUah
+        '
+        Me.txtRrUah.Location = New System.Drawing.Point(258, 140)
+        Me.txtRrUah.Name = "txtRrUah"
+        Me.txtRrUah.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
+        Me.txtRrUah.Properties.Appearance.Font = New System.Drawing.Font("Eras Demi ITC", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.txtRrUah.Properties.Appearance.Options.UseFont = True
+        Me.txtRrUah.Properties.ReadOnly = True
+        Me.txtRrUah.Size = New System.Drawing.Size(160, 30)
+        Me.txtRrUah.StyleController = Me.LayoutControl5
+        Me.txtRrUah.TabIndex = 4
+        Me.txtRrUah.TabStop = False
         '
         'LayoutControlGroup5
         '
@@ -806,15 +897,17 @@ Partial Class CashierNew
         Me.LayoutControlGroup5.AppearanceItemCaption.Options.UseForeColor = True
         Me.LayoutControlGroup5.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup5.GroupBordersVisible = False
-        Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem27, Me.LayoutControlItem28, Me.LayoutControlItem29, Me.LayoutControlItem30, Me.LayoutControlItem31})
+        Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem27, Me.LayoutControlItem28, Me.LayoutControlItem29, Me.LayoutControlItem30, Me.LayoutControlItem18, Me.LayoutControlItem20, Me.LayoutControlItem21, Me.LayoutControlItem22, Me.LayoutControlItem19, Me.LayoutControlItem23})
         Me.LayoutControlGroup5.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup5.Name = "Root"
         ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 75.0R
+        ColumnDefinition1.Width = 40.0R
         ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 25.0R
-        Me.LayoutControlGroup5.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2})
+        ColumnDefinition2.Width = 20.0R
+        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition3.Width = 40.0R
+        Me.LayoutControlGroup5.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
         RowDefinition1.Height = 34.0R
         RowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize
         RowDefinition2.Height = 34.0R
@@ -838,7 +931,7 @@ Partial Class CashierNew
         Me.LayoutControlItem27.Name = "dtPostpone"
         Me.LayoutControlItem27.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem27.OptionsTableLayoutItem.RowIndex = 2
-        Me.LayoutControlItem27.Size = New System.Drawing.Size(410, 34)
+        Me.LayoutControlItem27.Size = New System.Drawing.Size(246, 34)
         Me.LayoutControlItem27.Text = "£"
         Me.LayoutControlItem27.TextSize = New System.Drawing.Size(91, 23)
         '
@@ -850,7 +943,7 @@ Partial Class CashierNew
         Me.LayoutControlItem28.Name = "LayoutControlItem3"
         Me.LayoutControlItem28.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem28.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem28.Size = New System.Drawing.Size(410, 34)
+        Me.LayoutControlItem28.Size = New System.Drawing.Size(246, 34)
         Me.LayoutControlItem28.Text = "L.E."
         Me.LayoutControlItem28.TextSize = New System.Drawing.Size(91, 23)
         '
@@ -862,7 +955,7 @@ Partial Class CashierNew
         Me.LayoutControlItem29.Name = "LayoutControlItem4"
         Me.LayoutControlItem29.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem29.OptionsTableLayoutItem.RowIndex = 3
-        Me.LayoutControlItem29.Size = New System.Drawing.Size(410, 34)
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(246, 34)
         Me.LayoutControlItem29.Text = "RUB"
         Me.LayoutControlItem29.TextSize = New System.Drawing.Size(91, 23)
         '
@@ -874,20 +967,82 @@ Partial Class CashierNew
         Me.LayoutControlItem30.Name = "LayoutControlItem6"
         Me.LayoutControlItem30.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem30.OptionsTableLayoutItem.RowIndex = 4
-        Me.LayoutControlItem30.Size = New System.Drawing.Size(410, 38)
+        Me.LayoutControlItem30.Size = New System.Drawing.Size(246, 38)
         Me.LayoutControlItem30.Text = "UAH       "
         Me.LayoutControlItem30.TextSize = New System.Drawing.Size(91, 23)
         '
-        'LayoutControlItem31
+        'LayoutControlItem18
         '
-        Me.LayoutControlItem31.Control = Me.txtREUR
-        Me.LayoutControlItem31.CustomizationFormText = "القرار"
-        Me.LayoutControlItem31.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem31.Name = "LayoutControlItem10"
-        Me.LayoutControlItem31.OptionsTableLayoutItem.ColumnSpan = 2
-        Me.LayoutControlItem31.Size = New System.Drawing.Size(410, 34)
-        Me.LayoutControlItem31.Text = "€"
-        Me.LayoutControlItem31.TextSize = New System.Drawing.Size(91, 23)
+        Me.LayoutControlItem18.Control = Me.txtRrEur
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(246, 0)
+        Me.LayoutControlItem18.Name = "LayoutControlItem18"
+        Me.LayoutControlItem18.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(164, 34)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem18.TextVisible = False
+        '
+        'LayoutControlItem20
+        '
+        Me.LayoutControlItem20.Control = Me.txtRrEgp
+        Me.LayoutControlItem20.CustomizationFormText = "LayoutControlItem18"
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(246, 34)
+        Me.LayoutControlItem20.Name = "LayoutControlItem20"
+        Me.LayoutControlItem20.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem20.OptionsTableLayoutItem.RowIndex = 1
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(164, 34)
+        Me.LayoutControlItem20.Text = "LayoutControlItem18"
+        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem20.TextVisible = False
+        '
+        'LayoutControlItem21
+        '
+        Me.LayoutControlItem21.Control = Me.txtRrGbp
+        Me.LayoutControlItem21.CustomizationFormText = "LayoutControlItem18"
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(246, 68)
+        Me.LayoutControlItem21.Name = "LayoutControlItem21"
+        Me.LayoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem21.OptionsTableLayoutItem.RowIndex = 2
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(164, 34)
+        Me.LayoutControlItem21.Text = "LayoutControlItem18"
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem21.TextVisible = False
+        '
+        'LayoutControlItem22
+        '
+        Me.LayoutControlItem22.Control = Me.txtRrRub
+        Me.LayoutControlItem22.CustomizationFormText = "LayoutControlItem18"
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(246, 102)
+        Me.LayoutControlItem22.Name = "LayoutControlItem22"
+        Me.LayoutControlItem22.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem22.OptionsTableLayoutItem.RowIndex = 3
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(164, 34)
+        Me.LayoutControlItem22.Text = "LayoutControlItem18"
+        Me.LayoutControlItem22.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem22.TextVisible = False
+        '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.txtREUR
+        Me.LayoutControlItem19.CustomizationFormText = "القرار"
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem19.Name = "LayoutControlItem19"
+        Me.LayoutControlItem19.OptionsTableLayoutItem.ColumnSpan = 2
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(246, 34)
+        Me.LayoutControlItem19.Text = "€"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(91, 23)
+        '
+        'LayoutControlItem23
+        '
+        Me.LayoutControlItem23.Control = Me.txtRrUah
+        Me.LayoutControlItem23.CustomizationFormText = "LayoutControlItem18"
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(246, 136)
+        Me.LayoutControlItem23.Name = "LayoutControlItem23"
+        Me.LayoutControlItem23.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem23.OptionsTableLayoutItem.RowIndex = 4
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(164, 38)
+        Me.LayoutControlItem23.Text = "LayoutControlItem18"
+        Me.LayoutControlItem23.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem23.TextVisible = False
         '
         'LayoutControl3
         '
@@ -1012,8 +1167,6 @@ Partial Class CashierNew
         Me.LayoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "Root"
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 14.2857R
         ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition4.Width = 14.2857R
         ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
@@ -1026,7 +1179,9 @@ Partial Class CashierNew
         ColumnDefinition8.Width = 14.2857R
         ColumnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition9.Width = 14.2857R
-        Me.LayoutControlGroup3.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition3, ColumnDefinition4, ColumnDefinition5, ColumnDefinition6, ColumnDefinition7, ColumnDefinition8, ColumnDefinition9})
+        ColumnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition10.Width = 14.2857R
+        Me.LayoutControlGroup3.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition4, ColumnDefinition5, ColumnDefinition6, ColumnDefinition7, ColumnDefinition8, ColumnDefinition9, ColumnDefinition10})
         RowDefinition6.Height = 29.0R
         RowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize
         RowDefinition7.Height = 65.0R
@@ -1262,8 +1417,6 @@ Partial Class CashierNew
         Me.LayoutControlGroup2.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "Root"
-        ColumnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition10.Width = 14.2857R
         ColumnDefinition11.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition11.Width = 14.2857R
         ColumnDefinition12.SizeType = System.Windows.Forms.SizeType.Percent
@@ -1276,7 +1429,9 @@ Partial Class CashierNew
         ColumnDefinition15.Width = 14.2857R
         ColumnDefinition16.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition16.Width = 14.2857R
-        Me.LayoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition10, ColumnDefinition11, ColumnDefinition12, ColumnDefinition13, ColumnDefinition14, ColumnDefinition15, ColumnDefinition16})
+        ColumnDefinition17.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition17.Width = 14.2857R
+        Me.LayoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition11, ColumnDefinition12, ColumnDefinition13, ColumnDefinition14, ColumnDefinition15, ColumnDefinition16, ColumnDefinition17})
         RowDefinition8.Height = 29.0R
         RowDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize
         RowDefinition9.Height = 65.0R
@@ -1490,11 +1645,11 @@ Partial Class CashierNew
         Me.LayoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
-        ColumnDefinition17.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition17.Width = 90.0R
         ColumnDefinition18.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition18.Width = 10.0R
-        Me.LayoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition17, ColumnDefinition18})
+        ColumnDefinition18.Width = 90.0R
+        ColumnDefinition19.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition19.Width = 10.0R
+        Me.LayoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition18, ColumnDefinition19})
         RowDefinition10.Height = 34.0R
         RowDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize
         RowDefinition11.Height = 66.0R
@@ -1572,7 +1727,7 @@ Partial Class CashierNew
         Me.LabelControl4.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.LabelControl4.Appearance.Options.UseFont = True
         Me.LabelControl4.Appearance.Options.UseForeColor = True
-        Me.LabelControl4.Location = New System.Drawing.Point(13, 325)
+        Me.LabelControl4.Location = New System.Drawing.Point(13, 605)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(68, 23)
         Me.LabelControl4.TabIndex = 125
@@ -1587,7 +1742,7 @@ Partial Class CashierNew
         Me.al7.Appearance.Options.UseBackColor = True
         Me.al7.Appearance.Options.UseFont = True
         Me.al7.Appearance.Options.UseForeColor = True
-        Me.al7.Location = New System.Drawing.Point(321, 323)
+        Me.al7.Location = New System.Drawing.Point(321, 603)
         Me.al7.Margin = New System.Windows.Forms.Padding(4)
         Me.al7.Name = "al7"
         Me.al7.Size = New System.Drawing.Size(68, 23)
@@ -1598,7 +1753,7 @@ Partial Class CashierNew
         'oSearch
         '
         Me.oSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.oSearch.Location = New System.Drawing.Point(88, 318)
+        Me.oSearch.Location = New System.Drawing.Point(88, 598)
         Me.oSearch.Name = "oSearch"
         Me.oSearch.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 16.0!)
         Me.oSearch.Properties.Appearance.Options.UseFont = True
@@ -1611,7 +1766,7 @@ Partial Class CashierNew
         'CheckEdit1
         '
         Me.CheckEdit1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CheckEdit1.Location = New System.Drawing.Point(366, 244)
+        Me.CheckEdit1.Location = New System.Drawing.Point(366, 524)
         Me.CheckEdit1.Name = "CheckEdit1"
         Me.CheckEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.CheckEdit1.Properties.Appearance.Options.UseBackColor = True
@@ -1628,7 +1783,7 @@ Partial Class CashierNew
         Me.al6.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.al6.Appearance.Options.UseFont = True
         Me.al6.Appearance.Options.UseForeColor = True
-        Me.al6.Location = New System.Drawing.Point(44, 267)
+        Me.al6.Location = New System.Drawing.Point(44, 547)
         Me.al6.Margin = New System.Windows.Forms.Padding(4)
         Me.al6.Name = "al6"
         Me.al6.Size = New System.Drawing.Size(23, 23)
@@ -1643,7 +1798,7 @@ Partial Class CashierNew
         Me.al5.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.al5.Appearance.Options.UseFont = True
         Me.al5.Appearance.Options.UseForeColor = True
-        Me.al5.Location = New System.Drawing.Point(54, 222)
+        Me.al5.Location = New System.Drawing.Point(54, 502)
         Me.al5.Margin = New System.Windows.Forms.Padding(4)
         Me.al5.Name = "al5"
         Me.al5.Size = New System.Drawing.Size(23, 23)
@@ -1659,7 +1814,7 @@ Partial Class CashierNew
         Me.btnShowInvoice.Appearance.Options.UseFont = True
         Me.btnShowInvoice.Appearance.Options.UseForeColor = True
         Me.btnShowInvoice.ImageOptions.Image = CType(resources.GetObject("btnShowInvoice.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnShowInvoice.Location = New System.Drawing.Point(151, 280)
+        Me.btnShowInvoice.Location = New System.Drawing.Point(151, 560)
         Me.btnShowInvoice.Name = "btnShowInvoice"
         Me.btnShowInvoice.Size = New System.Drawing.Size(130, 33)
         Me.btnShowInvoice.TabIndex = 113
@@ -1673,7 +1828,7 @@ Partial Class CashierNew
         Me.al8.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.al8.Appearance.Options.UseFont = True
         Me.al8.Appearance.Options.UseForeColor = True
-        Me.al8.Location = New System.Drawing.Point(307, 266)
+        Me.al8.Location = New System.Drawing.Point(307, 546)
         Me.al8.Margin = New System.Windows.Forms.Padding(4)
         Me.al8.Name = "al8"
         Me.al8.Size = New System.Drawing.Size(23, 23)
@@ -1689,7 +1844,7 @@ Partial Class CashierNew
         Me.btnSaveInvoice.Appearance.Options.UseFont = True
         Me.btnSaveInvoice.Appearance.Options.UseForeColor = True
         Me.btnSaveInvoice.ImageOptions.Image = CType(resources.GetObject("btnSaveInvoice.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSaveInvoice.Location = New System.Drawing.Point(12, 228)
+        Me.btnSaveInvoice.Location = New System.Drawing.Point(12, 508)
         Me.btnSaveInvoice.Name = "btnSaveInvoice"
         Me.btnSaveInvoice.Size = New System.Drawing.Size(408, 48)
         Me.btnSaveInvoice.TabIndex = 111
@@ -1704,7 +1859,7 @@ Partial Class CashierNew
         Me.btnInvoicePrint.Appearance.Options.UseFont = True
         Me.btnInvoicePrint.Appearance.Options.UseForeColor = True
         Me.btnInvoicePrint.ImageOptions.Image = CType(resources.GetObject("btnInvoicePrint.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnInvoicePrint.Location = New System.Drawing.Point(12, 280)
+        Me.btnInvoicePrint.Location = New System.Drawing.Point(12, 560)
         Me.btnInvoicePrint.Name = "btnInvoicePrint"
         Me.btnInvoicePrint.Size = New System.Drawing.Size(130, 33)
         Me.btnInvoicePrint.TabIndex = 112
@@ -1719,7 +1874,7 @@ Partial Class CashierNew
         Me.btnCancelInvoice.Appearance.Options.UseFont = True
         Me.btnCancelInvoice.Appearance.Options.UseForeColor = True
         Me.btnCancelInvoice.ImageOptions.Image = CType(resources.GetObject("btnCancelInvoice.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnCancelInvoice.Location = New System.Drawing.Point(290, 279)
+        Me.btnCancelInvoice.Location = New System.Drawing.Point(290, 559)
         Me.btnCancelInvoice.Name = "btnCancelInvoice"
         Me.btnCancelInvoice.Size = New System.Drawing.Size(130, 33)
         Me.btnCancelInvoice.TabIndex = 114
@@ -1765,8 +1920,6 @@ Partial Class CashierNew
         Me.LayoutControlGroup4.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup4.Name = "Root"
-        ColumnDefinition19.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition19.Width = 14.2857R
         ColumnDefinition20.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition20.Width = 14.2857R
         ColumnDefinition21.SizeType = System.Windows.Forms.SizeType.Percent
@@ -1779,7 +1932,9 @@ Partial Class CashierNew
         ColumnDefinition24.Width = 14.2857R
         ColumnDefinition25.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition25.Width = 14.2857R
-        Me.LayoutControlGroup4.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition19, ColumnDefinition20, ColumnDefinition21, ColumnDefinition22, ColumnDefinition23, ColumnDefinition24, ColumnDefinition25})
+        ColumnDefinition26.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition26.Width = 14.2857R
+        Me.LayoutControlGroup4.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition20, ColumnDefinition21, ColumnDefinition22, ColumnDefinition23, ColumnDefinition24, ColumnDefinition25, ColumnDefinition26})
         RowDefinition14.Height = 29.0R
         RowDefinition14.SizeType = System.Windows.Forms.SizeType.AutoSize
         RowDefinition15.Height = 65.0R
@@ -1825,7 +1980,7 @@ Partial Class CashierNew
         Me.PanelControl2.Controls.Add(Me.KryptonButton8)
         Me.PanelControl2.Controls.Add(Me.oRemove)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl2.Location = New System.Drawing.Point(434, 258)
+        Me.PanelControl2.Location = New System.Drawing.Point(434, 538)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(598, 219)
         Me.PanelControl2.TabIndex = 17
@@ -2314,7 +2469,7 @@ Partial Class CashierNew
         Me.oDgv.RowHeadersVisible = False
         Me.oDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.oDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.oDgv.Size = New System.Drawing.Size(598, 131)
+        Me.oDgv.Size = New System.Drawing.Size(598, 411)
         Me.oDgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ContextMenuHeading
         Me.oDgv.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White
         Me.oDgv.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White
@@ -2394,7 +2549,7 @@ Partial Class CashierNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1032, 504)
+        Me.ClientSize = New System.Drawing.Size(1032, 784)
         Me.Controls.Add(Me.oDgv)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl3)
@@ -2414,17 +2569,27 @@ Partial Class CashierNew
         Me.PanelControl3.PerformLayout()
         CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl5.ResumeLayout(False)
+        CType(Me.txtRrEur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRGBP.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtREGP.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRRUB.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRUAH.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtREUR.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRrEgp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRrGbp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRrRub.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRrUah.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl3.ResumeLayout(False)
         CType(Me.cUSD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2539,7 +2704,6 @@ Partial Class CashierNew
     Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem31 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControl3 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cUSD As DevExpress.XtraEditors.TextEdit
@@ -2645,6 +2809,17 @@ Partial Class CashierNew
     Friend WithEvents btnDiscount As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lblAgent As DevExpress.XtraBars.BarHeaderItem
+    Friend WithEvents txtRrEur As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtRrEgp As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtRrGbp As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtRrRub As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtRrUah As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem20 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem22 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem23 As DevExpress.XtraLayout.LayoutControlItem
 
 
 End Class

@@ -528,6 +528,11 @@ Public Class frmMain
             Next
             inTotalize()
         End If
+
+        ' for sales deletion
+        If GlobalVariables.authority = "Admin" And e.Control And e.Shift And e.KeyCode = Keys.D Then
+            frmDeleteSales.ShowDialog()
+        End If
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -4969,4 +4974,6 @@ retry:
             deTimeTill.Value = Today & " 23:59"
         End If
     End Sub
+
+    
 End Class

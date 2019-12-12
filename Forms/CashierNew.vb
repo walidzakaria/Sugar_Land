@@ -122,7 +122,20 @@ Public Class CashierNew
         visa = Val(pVisa.Text) / Val(result(2))
         rest = rest - usd - eur - le - rub - uah - sterling - visa
         tbRest.Text = Math.Round(rest, 2, MidpointRounding.AwayFromZero)
+        CalculateRest()
 
+    End Sub
+
+    Private Sub CalculateRest()
+        
+        Dim theRate() As String = GetCurrency().Split(";")
+
+        Dim tRest As Decimal = Val(tbRest.EditValue)
+        txtRrEur.Text = Math.Round(tRest * Val(theRate(1)), 2, MidpointRounding.AwayFromZero)
+        txtRrEgp.Text = Math.Round(tRest * Val(theRate(2)), 2, MidpointRounding.AwayFromZero)
+        txtRrGbp.Text = Math.Round(tRest * Val(theRate(3)), 2, MidpointRounding.AwayFromZero)
+        txtRrRub.Text = Math.Round(tRest * Val(theRate(4)), 2, MidpointRounding.AwayFromZero)
+        txtRrUah.Text = Math.Round(tRest * Val(theRate(5)), 2, MidpointRounding.AwayFromZero)
 
     End Sub
     Private Function checkAgent(ByVal full As Boolean) As Boolean
@@ -713,7 +726,15 @@ Restart:
         txtRUAH.Text = Math.Round(tSales * Val(theRate(5)), 2, MidpointRounding.AwayFromZero)
 
         tbDiscount.Text = Math.Round(tDisc, 2, MidpointRounding.AwayFromZero)
-        'tbRest1.Text = GetRest(cbRest1Currency.SelectedIndex)
+
+        Dim tRest As Decimal = Val(tbRest.EditValue)
+        txtRrEur.Text = Math.Round(tRest * Val(theRate(1)), 2, MidpointRounding.AwayFromZero)
+        txtRrEgp.Text = Math.Round(tRest * Val(theRate(2)), 2, MidpointRounding.AwayFromZero)
+        txtRrGbp.Text = Math.Round(tRest * Val(theRate(3)), 2, MidpointRounding.AwayFromZero)
+        txtRrRub.Text = Math.Round(tRest * Val(theRate(4)), 2, MidpointRounding.AwayFromZero)
+        txtRrUah.Text = Math.Round(tRest * Val(theRate(5)), 2, MidpointRounding.AwayFromZero)
+        CalculateRest()
+
     End Sub
 
     Private Function CheckQnty() As Boolean
